@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+// adds extra info to the tile class
 public class planes : tile
 {
 

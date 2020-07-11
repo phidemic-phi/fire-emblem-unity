@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class yellowPlayer : player
 {
+    //grabs allys and foes
+    // will add AI type stuff here later
     public override void setup()
     {
         turn = false;

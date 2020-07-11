@@ -2,20 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+combat medator is a thing that handels all the fight calculations and everything regarding dmg and healing
+very basic at the moment/unworking
+*/
+
+
+
+
+
 public class combatmed : MonoBehaviour
 {
-
+    // this is the function that starts all the combat, and every other function is just a helper to this one
     public void cambatTaker(unit attacker, tile attack, unit defender, tile defend)
     {
 
     }
 
 
-
+    // faster random number generation
     public int random()
     {
         return Random.Range(0, 99);
     }
+
+
+    // a single round of combat
     public void attack (unit attacker, unit defender)
     {
         if(accuracy(attacker, defender) > random())
@@ -26,6 +38,9 @@ public class combatmed : MonoBehaviour
                 defender.takeDamage(damage(attacker, defender));
         }
     }
+
+
+    // a helper function to calculate accuracy
     public int accuracy(unit attacker, unit defender)
     {
         int boost = evasionTriangle(attacker, defender);
@@ -41,6 +56,9 @@ public class combatmed : MonoBehaviour
                 
         
     }
+
+
+    //helper function to calculate how much damage was done or can be done
     public int damage(unit attacker, unit defender)
     {
         int boost = attackTriangle(attacker, defender);
@@ -64,6 +82,9 @@ public class combatmed : MonoBehaviour
       
             return 0;
     }
+
+
+    // helper function to determine how high the crit chance is
     public int crit(unit attacker, unit defender)
     {
         int temp = attacker.crit - defender.dodge;
@@ -73,10 +94,16 @@ public class combatmed : MonoBehaviour
             return temp;
 
     }
+
+
+    // a function to give to AI to determine what to attck
     public int combatscore(unit attacker, unit defender)
     {
         return (accuracy(attacker, defender) * damage(attacker, defender));
     }
+
+
+    // if triangle attack is for or against you
     public triangle advantage(unit attacker, unit defender)
     {
         if (defender.has_weapon)
@@ -152,6 +179,8 @@ public class combatmed : MonoBehaviour
         else
             return triangle.even;
     }
+
+    // the accuracy boost/punishment for having the triangle
     public int evasionTriangle(unit attacker, unit defender)
     {
         triangle temp = advantage(attacker, defender);
@@ -167,6 +196,8 @@ public class combatmed : MonoBehaviour
         return 0;
         
     }
+
+    // the damage boost/punishment for having the triangle
     public int attackTriangle(unit attacker, unit defender)
     {
         triangle temp = advantage(attacker, defender);

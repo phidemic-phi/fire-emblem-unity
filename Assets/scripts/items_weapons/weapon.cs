@@ -15,6 +15,10 @@ public abstract class weapon : item
   
 
     public override void use(unit person) { }
+    /// <summary>
+    /// gets the commands that can be used on this
+    /// </summary>
+    /// <returns>a list of strings that each are command that can be used on this item</returns>
     public override List<string> commandList() {
         List<string> commands = new List<string>(); ;
         commands.Add("Equip");
@@ -23,6 +27,16 @@ public abstract class weapon : item
         return commands;
 
     }
+    /// <summary>
+    /// gets the stats from the weapon, all passed by referance
+    /// </summary>
+    /// <param name="might">strength of the weapon</param>
+    /// <param name="hit">hit of the weapon</param>
+    /// <param name="crit">crit of the weapon</param>
+    /// <param name="weight">weight of the weapon</param>
+    /// <param name="min_range">min range of the weapon</param>
+    /// <param name="max_range">max range of the weapon</param>
+    /// <param name="dmg">type of damage the weapon does</param>
     public override void getStats(ref int might, ref int hit, ref int crit, ref int weight, ref int min_range, ref int max_range, ref damageType dmg)
     {
         might = this.might;
@@ -33,6 +47,11 @@ public abstract class weapon : item
         crit = this.crit;
         dmg = damage;
     }
+    /// <summary>
+    /// checks to see if you can use this weapon
+    /// </summary>
+    /// <param name="person">the person trying to use the weapon</param>
+    /// <returns></returns>
     public override bool equipable(unit person)
     {
         switch (type)

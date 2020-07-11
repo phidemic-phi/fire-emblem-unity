@@ -1,9 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/* this is the object that controls turns, when the map is over
+just generally thte highest level thing in the tree
+right now only does turns and some light set up
+*/
 public class game_controller : MonoBehaviour
 {
+
+    //all 4 players 
+    //blue is you
+    // yellow is ally so an AI you can give some commands to
+    //red is foes
+    // green is another ally but one you have no control over
     public player blue;
     public player yellow;
     public player red;
@@ -11,12 +20,13 @@ public class game_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // just grabbing the players so the pointers have them
        blue = GameObject.FindGameObjectWithTag("player").GetComponent(typeof(player)) as player;
        yellow =  GameObject.FindGameObjectWithTag("ally player").GetComponent(typeof(player)) as player;
        green = GameObject.FindGameObjectWithTag("green player").GetComponent(typeof(player)) as player;
         red = GameObject.FindGameObjectWithTag("red player").GetComponent(typeof(player)) as player;
     }
-
+    // manages the players turns so as soon as one is done we go to the next player
     public void turnDone()
     {
         if(blue.turn == true)

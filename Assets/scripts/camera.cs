@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+/*
+ * basic camera movement and only use of keyboard/controller ATM will change with time
+*/
 public class camera : MonoBehaviour
 {
    

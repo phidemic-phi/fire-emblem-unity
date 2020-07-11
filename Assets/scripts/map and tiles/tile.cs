@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//what the ground is made out of
 public abstract class tile : MonoBehaviour
 {
-
+    // statsthat units get from being in it
     public int def;
     public int res;
     public int avo;
     public int value;
 
+    // cost of going into the tile from those classes
+    //stored as varibles as might make spells that can change the values, as I want to do some unique things
     public int foot;
     public int armour;
     public int mage;
@@ -24,7 +28,7 @@ public abstract class tile : MonoBehaviour
     public int dragon;
     public int rafel;
 
-
+    // colour changer will eventtually make a semi transparent layer for this
     public float red;
     public float blue;
     public float green;
@@ -47,7 +51,7 @@ public abstract class tile : MonoBehaviour
     public void Update()
     {
     }
-
+    // changing the colour for certain things
     public void set_blue()
     {
         colour.r = red;
@@ -76,6 +80,7 @@ public abstract class tile : MonoBehaviour
         fight = true;
     }
 
+    // getting the cost out of it
     public int cost(MoveType type)
     {
         switch (type)
@@ -108,6 +113,8 @@ public abstract class tile : MonoBehaviour
 
                
     }
+
+    //what happens when clicked on
     void OnMouseDown()
     {
         if (value > 0)
@@ -118,12 +125,16 @@ public abstract class tile : MonoBehaviour
             mum.combatClicked(this);
 
     }
+
+    //removing all movement from unit changes
     public void clean()
     {
         clear();
         value = 0;
         fight = false;
     }
+
+    // just removes the colours not the other things
     public void clear()
     {
         colour.r = red;

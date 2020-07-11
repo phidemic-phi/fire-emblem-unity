@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// base class for all items
+/// split into two main types consumables and weapons
+/// </summary>
 public abstract class item : ScriptableObject
 {
     public int uses;

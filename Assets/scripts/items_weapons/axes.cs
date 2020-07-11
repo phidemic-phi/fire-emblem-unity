@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this is all the axes and their data
+/// </summary>
+
+
+
+
+
 public class bronzeaxe : weapon
 {
 

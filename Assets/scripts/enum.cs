@@ -1,3 +1,9 @@
+/* just some enumations to help with states or some other few things, not too fancy
+names of the enums should say what they are for
+*/
+
+
+
 
 public enum Affinity { fire, water, wind, thunder, heaven, earth, light, dark }
 public enum Weapon_rank { none,E,D,C,B,A,S,SS}

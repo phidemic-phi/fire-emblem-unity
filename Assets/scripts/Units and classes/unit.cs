@@ -4,22 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/*
+ * base class of all units.
+ as such it holds a lot of the information that is used as a base for everything that you interact with in the game
+ used in joint with the unadded character information to make a full unit
+ * 
+ */
 public abstract class unit : MonoBehaviour
 {
-
+    //basic information that is very visable
     public int exp;
     public int level;
     public int hp;
     public unitState state;
     public MoveType movetype;
     public bool has_weapon;
-
+    //where items go
     public List<item> invintory;
     private int max_invintory = 8;
 
 
 
-
+    //containers for every stat
     public int max_hp;
     public int strength;
     public int magic;
@@ -29,6 +36,7 @@ public abstract class unit : MonoBehaviour
     public int defence;
     public int resistance;
 
+    // the class caps as every class has unique ones
     public int cap_max_hp;
     public int cap_str;
     public int cap_mag;
@@ -38,6 +46,7 @@ public abstract class unit : MonoBehaviour
     public int cap_def;
     public int cap_res;
 
+    //class growth rates that are combined with personal/personality growthes to make the full value
     public int growth_max_hp;
     public int growth_str;
     public int growth_mag;
@@ -47,7 +56,7 @@ public abstract class unit : MonoBehaviour
     public int growth_def;
     public int growth_res;
 
-
+    // the quick calculated states for combat to use
     public int move;
     public int attack;
     public int physicalDef;
@@ -60,9 +69,11 @@ public abstract class unit : MonoBehaviour
     public int max_range;
     public int min_range;
 
+    // for skills (last thing to add)
     public int skill_cap;
     public int skill_use;
 
+    // exp for weapon ranks to know when better ones can be used
     public int sword_exp;
     public int lance_exp;
     public int axe_exp;
@@ -76,7 +87,7 @@ public abstract class unit : MonoBehaviour
     public int dark_exp;
     public int staves_exp;
 
-
+    // what rank you are with all the weapons
     public Weapon_rank sword_rank;
     public Weapon_rank lance_rank;
     public Weapon_rank axe_rank;
@@ -90,21 +101,32 @@ public abstract class unit : MonoBehaviour
     public Weapon_rank dark_rank;
     public Weapon_rank staves_rank;
 
-
+    //affinity for supports and stuff
     public Affinity affinity;
+    
+    //are you the lord for seizing and stuff
+    //can't put in personlization thing as RD has more then one
     public bool lord;
+
+    // list holding how you moved
     public List<Directions> going = new List<Directions>();
 
+
+    //movement holder varibles
     private float tempX;
     private float tempZ;
     private Vector3 oldLocation;
     
+
+    // the player that i belong to
     public player mum;
 
   
 
     private void Start()
     {
+        // gets parent, will also make the weapons from a file in the future
+        // and updates the stats withen me 
         mum = GetComponentInParent(typeof(player)) as player;
         lightning temp = lightning.CreateInstance(0);
         invintory.Add(temp);
@@ -118,6 +140,9 @@ public abstract class unit : MonoBehaviour
     }
   
     // Update is called once per frame
+
+        // movement function
+        //removes things you of the going list and moves in that way
     void Update()
     {
 
@@ -156,10 +181,16 @@ public abstract class unit : MonoBehaviour
                 transform.position = temp;
             }
 
-            moving();
-         }
+            // did I stop moving check
+            if (going.Count == 0)
+            {
+
+                state = unitState.menus;
+            }
+        }
     }
 
+    // auto equips the next item that I can hold
     public void equiping()
     {
         if (has_weapon == false)
@@ -184,6 +215,8 @@ public abstract class unit : MonoBehaviour
         }
     }
 
+
+    //equip this specific weapon if I can else nothing
     public bool equip(int num)
     {
         if (invintory[num].equipable(this))
@@ -202,23 +235,31 @@ public abstract class unit : MonoBehaviour
         return false;
     }
 
+    // drops the item, if weapon that you are holding will equip another
     public void drop(int num)
     {
         invintory.RemoveAt(num);
         if (num == 0)
+        {
+            has_weapon = false;
             equiping();
+        }
     }
 
+    // for the use command on an item
     public void use(int num)
     {
         invintory[num].use(this);
     }
+
+    //uneqip the current weapon
     public void unequip()
     {
        has_weapon = false;
         updateStats();
     }
 
+    // updates combat stats with weapon stats
     public void updateStats()
     {
         int mt =0 , hit = 0, crit = 0, weight = 0, min = 0, max = 0;
@@ -248,15 +289,8 @@ public abstract class unit : MonoBehaviour
 
 
 
-
-    public void moving()
-    {
-        if (going.Count == 0)
-        {
-           
-            state = unitState.menus;
-        }
-    }
+   //you clicked me, if I have yet to do anything, then go to player to see if its our turn
+   //update old location so if move was canceled
 
     void OnMouseDown()
     {
@@ -274,6 +308,8 @@ public abstract class unit : MonoBehaviour
        
     }
 
+
+    // this is what takes a list of directions for movement
     public void location(List<Directions> dir)
     {
         tempX = transform.position[0];
@@ -282,24 +318,33 @@ public abstract class unit : MonoBehaviour
         state = unitState.moving;
     }
 
+    //do we have an ally at loaction
     public bool allyHere(Vector3 location)
     {
         return mum.allyHere(location);
     }
+
+    //do we have a foe?
     public bool foeHere(Vector3 location)
     {
         
         return mum.foeHere(location);
     }
 
+
+    // player calls this on all of its units at start of turn
     public void turnStart()
     {
         state = unitState.nothing;
     }
+
+    // how I take damage, need to update for death
     public void takeDamage(int damage)
     {
         hp -= damage;
     }
+
+    //wait command for HUD
     public void wait()
     {
         
@@ -307,6 +352,7 @@ public abstract class unit : MonoBehaviour
         mum.moveDone();
     }
    
+    //cancel mevement from HUD
     public void cancelMove()
     {
         
@@ -323,6 +369,7 @@ public abstract class unit : MonoBehaviour
             
         }
     }
+    //gets the values from  classes
     public abstract void setValue();
     
 }

@@ -2,11 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/* 
+ * base class of the 4 main playersright now just implementing the main functions of players
+ */
+
+
+
+    
 public abstract class player : MonoBehaviour
 {
 
-    
+    // is it my turn?
     public bool turn;
+
+    //pointers to all things that could be helpful
     public List<unit> units = new List<unit>();
     public map Map;
     public List<player> foes = new List<player>();
@@ -17,6 +27,7 @@ public abstract class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //loop to gather all of my units
         for (int i = 0; i < this.gameObject.transform.childCount; i++)
         {
 
@@ -30,7 +41,8 @@ public abstract class player : MonoBehaviour
         setup();
     }
    
-
+    //what happens when a unit is clicked
+    // mainly to tell the map and hHUD that a unit was clicked
     public bool unitClicked(unit guy)
     {
         if (turn == true)
@@ -43,6 +55,8 @@ public abstract class player : MonoBehaviour
         return false;
     }
 
+
+    //helper function, for do I have a unit at location?
     public bool isHere(Vector3 location)
     {
         for (int i = 0; i < units.Count; i++)
@@ -56,6 +70,7 @@ public abstract class player : MonoBehaviour
         return false;
     }
 
+    //get the unit that is at location that I know you have
     public unit getHere(Vector3 location)
     {
         for (int i = 0; i < units.Count; i++)
@@ -69,7 +84,7 @@ public abstract class player : MonoBehaviour
         return null;
     }
 
-
+    //do I have a unit here or do one of my allys?
     public bool allyHere(Vector3 location)
     {
         bool temp = isHere(location);
@@ -84,6 +99,7 @@ public abstract class player : MonoBehaviour
         return temp;
     }
 
+    //does one of my foes have a unit here?
     public bool foeHere(Vector3 location)
     {
         bool temp = false;
@@ -96,6 +112,8 @@ public abstract class player : MonoBehaviour
         return temp;
     }
 
+    //get the foe that is at location 
+    //should always use foe here before this so you know that you will grab one
     public unit getFoe(Vector3 location)
     {
        
@@ -107,6 +125,8 @@ public abstract class player : MonoBehaviour
         return null;
     }
 
+
+    //what happens at the start of my turn
     public void turnStart()
     {
         turn = true;
@@ -121,7 +141,7 @@ public abstract class player : MonoBehaviour
         }
     }
 
-
+    //check to see if all my units have moved
     public void moveDone()
     {
         clear();
@@ -136,6 +156,8 @@ public abstract class player : MonoBehaviour
             god.turnDone();
         }
     }
+
+    //clearing the movement colours
     public void clear()
     {
         Map.cleanTiles();
