@@ -31,15 +31,16 @@ public abstract class player : MonoBehaviour
     }
    
 
-    public void unitClicked(unit guy)
+    public bool unitClicked(unit guy)
     {
         if (turn == true)
         {
           
             hud.getunit(guy);
             Map.unitClicked(guy);
-           
+            return true;
         }
+        return false;
     }
 
     public bool isHere(Vector3 location)

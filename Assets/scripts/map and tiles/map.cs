@@ -83,6 +83,7 @@ public class map : MonoBehaviour
 
     public void unitClicked(unit guy)
     {
+        cleanTiles();
         selected = guy;
         Vector3 location = guy.transform.position;
         

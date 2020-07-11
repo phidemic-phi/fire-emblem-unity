@@ -262,9 +262,13 @@ public abstract class unit : MonoBehaviour
     {
         if (state == unitState.nothing)
         {
-            state = unitState.selected;
-            oldLocation = transform.position;
-            mum.unitClicked(this);
+            
+            
+            if (mum.unitClicked(this) == true)
+            {
+                state = unitState.selected;
+                oldLocation = transform.position;
+            }
             
         }
        

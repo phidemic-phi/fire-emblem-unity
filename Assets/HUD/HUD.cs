@@ -19,6 +19,7 @@ public class HUD : MonoBehaviour
         cancel = GameObject.FindGameObjectWithTag("cancelButton");
         disapear();
         state = hudState.nothing;
+        combat = GameObject.FindGameObjectWithTag("CombatMed").GetComponent(typeof(combatmed)) as combatmed;
 
     }
     // when a unit is clicked on and given to the hud to handle
@@ -27,7 +28,7 @@ public class HUD : MonoBehaviour
         state = hudState.normal;
         update();
         if (selected != null)
-            if (selected.state != unitState.done&& selected.state != unitState.selected)
+            if (selected.state != unitState.done)
                  selected.cancelMove();
 
         selected = temp;
@@ -70,6 +71,7 @@ public class HUD : MonoBehaviour
     public void attackButton()
     {
         state = hudState.attackItem;
+        update();
     }
 
 
@@ -116,8 +118,10 @@ public class HUD : MonoBehaviour
                 break;
 
             case hudState.attack: // when selecting an opponent
-                
+                break;
             case hudState.attackItem: // selecting an item to attack with after selecting attack
+                selected.equip(num);
+                state = hudState.attack;
                 break;
             case hudState.itemList: // selecting an item to do things with
         
@@ -188,9 +192,10 @@ public class HUD : MonoBehaviour
                     break;
 
             case hudState.attack: // when selecting an opponent
+                break;
 
             case hudState.attackItem: // selecting an item to attack with after selecting attack
-                break;
+            
             case hudState.itemList: // selecting an item to do things with
                 
                 buttons = selected.invintory.Count;
@@ -245,5 +250,6 @@ public class HUD : MonoBehaviour
     {
         Vector3 location = selected.transform.position;
         combat.cambatTaker(selected, selected.mum.Map.tiles[(int)location[0]][(int)location[2]], person, spot);
+        waitButton();
     }
 }
