@@ -14,12 +14,31 @@ very basic at the moment/unworking
 public class combatmed : MonoBehaviour
 {
     // this is the function that starts all the combat, and every other function is just a helper to this one
-    public void cambatTaker(unit attacker, tile attack, unit defender, tile defend)
+    public void cambatTaker(unit attacker, tile attackSpot, unit defender, tile defendSpot)
     {
-
+        attack(attacker, defender, defendSpot);
+        int dis = distance(attackSpot, defendSpot);
+        if (defender.min_range <= dis && defender.max_range >= dis)
+        {
+            attack(defender, attacker, attackSpot);
+            if (defender.AS > attacker.AS + 4)
+                attack(defender, attacker, attackSpot);
+        }
+        if (attacker.AS > defender.AS + 4) {
+            attack(attacker, defender, defendSpot);
+        }
+      
     }
 
-
+    public int distance(tile att, tile def)
+    {
+        int num = 0, num2 =0;
+        Vector3 posAtt = att.transform.position;
+        Vector3 posDef = def.transform.position;
+        num = (int)posAtt[0] - (int)posDef[0];
+        num2 = (int)posAtt[2] - (int)posDef[2];
+        return Mathf.Abs(num) + Mathf.Abs(num2);
+    }
     // faster random number generation
     public int random()
     {
@@ -28,26 +47,26 @@ public class combatmed : MonoBehaviour
 
 
     // a single round of combat
-    public void attack (unit attacker, unit defender)
+    public void attack (unit attacker, unit defender, tile spot)
     {
-        if(accuracy(attacker, defender) > random())
+        if(accuracy(attacker, defender, spot) > random())
         {
             if (crit(attacker, defender) > random())
-                defender.takeDamage(damage(attacker, defender) * 3);
+                defender.takeDamage(damage(attacker, defender, spot) * 3);
             else
-                defender.takeDamage(damage(attacker, defender));
+                defender.takeDamage(damage(attacker, defender, spot));
         }
     }
 
 
     // a helper function to calculate accuracy
-    public int accuracy(unit attacker, unit defender)
+    public int accuracy(unit attacker, unit defender, tile spot)
     {
         int boost = evasionTriangle(attacker, defender);
         int num = 0;
       
             
-                num = (attacker.hit - defender.avoid) + boost;
+                num = (attacker.hit - (defender.avoid+ spot.avo)+ boost);
                 if (num > 100)
                     return 100;
                 else
@@ -59,13 +78,13 @@ public class combatmed : MonoBehaviour
 
 
     //helper function to calculate how much damage was done or can be done
-    public int damage(unit attacker, unit defender)
+    public int damage(unit attacker, unit defender, tile spot)
     {
         int boost = attackTriangle(attacker, defender);
         int temp;
         if (attacker.invintory[0].damage == damageType.physical)
         {
-            temp = (attacker.attack - defender.physicalDef) + boost;
+            temp = (attacker.attack - (defender.physicalDef+ spot.def)) + boost;
             if (temp < 0)
                 return 0;
             else
@@ -73,7 +92,7 @@ public class combatmed : MonoBehaviour
         }
         else if (attacker.invintory[0].damage == damageType.magical)
         {
-            temp = (attacker.attack - defender.magicalDef) + boost;
+            temp = (attacker.attack - (defender.magicalDef+spot.res)) + boost;
             if (temp < 0)
                 return 0;
             else
@@ -97,9 +116,9 @@ public class combatmed : MonoBehaviour
 
 
     // a function to give to AI to determine what to attck
-    public int combatscore(unit attacker, unit defender)
+    public int combatscore(unit attacker, unit defender,tile spot)
     {
-        return (accuracy(attacker, defender) * damage(attacker, defender));
+        return (accuracy(attacker, defender, spot) * damage(attacker, defender, spot));
     }
 
 

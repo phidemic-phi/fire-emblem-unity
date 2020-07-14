@@ -18,6 +18,9 @@ public class map : MonoBehaviour
     public int Y;
     public Affinity affinity;
     public HUD menu;
+    public GameObject blueSquare;
+    public GameObject greenSquare;
+    public GameObject redSquare;
 
     void Start()
     {
@@ -100,9 +103,9 @@ public class map : MonoBehaviour
         Vector3 location = guy.transform.position;
         
         recursive((int)location[0], (int)location[2], guy.movetype, guy.move + 1);
-        tiles[(int)location[0]][(int)location[2]].clear();
+       
         makeRed((int)location[0], (int)location[2], 0);
-
+        tiles[(int)location[0]][(int)location[2]].set_blue();
 
     }
 
@@ -167,53 +170,54 @@ public class map : MonoBehaviour
     public void makeRed(int x, int y, int distance)
     {
         distance += 1;
-        if (distance <= selected.max_range) {
+        if (distance <= selected.max_range)
+        {
             if (x != X)
             {
-                if (tiles[x + 1][y].value == 0) {
-                    if (distance >= selected.min_range)
-                        tiles[x + 1][y].set_red();
-                    makeRed(x + 1, y, distance );
 
-                }
+                if (distance >= selected.min_range)
+                    tiles[x + 1][y].set_red();
+                makeRed(x + 1, y, distance);
+
+
             }
             if (x != 0)
             {
-                if (tiles[x - 1][y].value == 0)
-                {
+
+                
                     if (distance >= selected.min_range)
                         tiles[x - 1][y].set_red();
-                    makeRed(x - 1, y, distance );
+                    makeRed(x - 1, y, distance);
+
 
                 }
-            }
 
 
 
-            if (y != Y)
-            {
-                if (tiles[x][y + 1].value == 0) { 
+                if (y != Y)
+                {
+
 
                     if (distance >= selected.min_range)
-                        tiles[x][y+1].set_red();
-                    makeRed(x , y+1, distance);
+                        tiles[x][y + 1].set_red();
+                    makeRed(x, y + 1, distance);
+
 
                 }
-            }
-            if (y != 0)
-            {
-                if (tiles[x][y - 1].value == 0) {
+                if (y != 0)
+                {
+
                     if (distance >= selected.min_range)
-                         tiles[x][y - 1].set_red();
-                     makeRed(x, y - 1, distance );
+                        tiles[x][y - 1].set_red();
+                    makeRed(x, y - 1, distance);
 
 
 
-                }
+
+                
             }
         }
     }
-
     /// <summary>
     /// is there a for here, for the unit selected
     /// </summary>
@@ -242,17 +246,20 @@ public class map : MonoBehaviour
     /// <param name="spot">the tile that was clicked</param>
     public void tileClicked(tile spot)
     {
-        if (!selected.allyHere(spot.transform.position) || ((spot.transform.position[2] ==selected.transform.position[2])&& (spot.transform.position[0] == selected.transform.position[0])))
+        if (selected.state == unitState.selected)
         {
-            List<Directions> temp = new List<Directions>();
-            temp = pathfinder(spot);
-            cleanTiles();
-
-            selected.location(temp);
-            if (selected.going.Count == 0)
+            if (!selected.allyHere(spot.transform.position) || ((spot.transform.position[2] == selected.transform.position[2]) && (spot.transform.position[0] == selected.transform.position[0])))
             {
+                List<Directions> temp = new List<Directions>();
+                temp = pathfinder(spot);
+                //clearTiles();
 
-                selected.state = unitState.menus;
+                selected.location(temp);
+                if (selected.going.Count == 0)
+                {
+
+                    selected.state = unitState.menus;
+                }
             }
         }
     }
@@ -339,6 +346,34 @@ public class map : MonoBehaviour
 
             for (int y = 0; y <= Y; y++)
                 tiles[x][y].clean();
+        }
+    }
+    public void clearTiles()
+    {
+        for (int x = 0; x <= X; x++)
+        {
+
+
+            for (int y = 0; y <= Y; y++)
+                tiles[x][y].clear();
+        }
+    }
+    public void revisTiles()
+    {
+
+        for (int x = 0; x <= X; x++)
+        {
+
+
+            for (int y = 0; y <= Y; y++)
+                if(tiles[x][y].value > 0)
+                {
+                    tiles[x][y].set_blue();
+                }
+            else if (tiles[x][y].fight == true)
+                {
+                    tiles[x][y].set_red();
+                }
         }
     }
 }

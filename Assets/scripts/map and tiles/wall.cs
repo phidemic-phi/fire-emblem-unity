@@ -17,19 +17,7 @@ public class wall : tile
     }
     public override void setValue()
     {
-       cubeRenderer = GetComponent<Renderer>();
-
-        red = 0f;
-        green = 0f;
-        blue = 0f;
-
-        colour.r = red;
-        colour.g = green;
-        colour.b = blue;
-
-        
-        cubeRenderer.material.color = colour;
-
+       
 
 
         def = 0;

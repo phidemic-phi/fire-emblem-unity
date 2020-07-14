@@ -16,3 +16,4 @@ public enum triangle {  yes, no , even}
 public enum damageType { physical, magical}
 public enum unitState { nothing, selected, moving, menus, done}
 public enum hudState { nothing, normal, attackItem, attack, itemList, item, blueCommand, yellowCommand }
+public enum tileState { clear, green, blue, red}

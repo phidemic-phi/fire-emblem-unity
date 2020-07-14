@@ -28,19 +28,14 @@ public abstract class tile : MonoBehaviour
     public int dragon;
     public int rafel;
 
-    // colour changer will eventtually make a semi transparent layer for this
-    public float red;
-    public float blue;
-    public float green;
-
-    public Color colour;
-    public Renderer cubeRenderer;
+ 
     private map mum;
     public bool fight;
-
+    public tileState state;
 
     private void Start()
     {
+        state = tileState.clear;
         mum=  GetComponentInParent(typeof(map)) as map;
         setValue();
         fight = false;
@@ -54,30 +49,51 @@ public abstract class tile : MonoBehaviour
     // changing the colour for certain things
     public void set_blue()
     {
-        colour.r = red;
-        colour.g = green;
-        colour.b = blue + 0.7f;
-        cubeRenderer.material.color = colour;
-
+        if (state != tileState.blue)
+        {
+            if (transform.childCount > 0)
+            {
+                for (int i = transform.childCount; i > 0; i--)
+                {
+                    Destroy(transform.GetChild(i - 1).gameObject, 0f);
+                }
+            }
+            Vector3 pos = transform.position;
+            pos[1] += 0.25f;
+            Instantiate(mum.blueSquare, pos, Quaternion.identity, transform);
+            state = tileState.blue;
+        }
 
     }
     public void set_green()
     {
-        colour.r = red;
-        colour.g = green + 0.7f;
-        colour.b = blue ;
-        cubeRenderer.material.color = colour;
+        if (state != tileState.green)
+        {
+            if (transform.childCount > 0)
+            {
+                for (int i = transform.childCount; i > 0; i--)
+                {
+                    Destroy(transform.GetChild(i - 1).gameObject, 0f);
+                }
+            }
+            Vector3 pos = transform.position;
+            pos[1] += 0.25f;
+            Instantiate(mum.greenSquare, pos, Quaternion.identity, transform);
+            state = tileState.green;
 
-
+        }
     }
     public void set_red()
     {
-        colour.r = red + 0.7f;
-        colour.g = green;
-        colour.b = blue;
-        cubeRenderer.material.color = colour;
-
+        if (state == tileState.clear)
+        {
+            Vector3 pos = transform.position;
+            pos[1] += 0.25f;
+            Instantiate(mum.redSquare, pos, Quaternion.identity, transform);
+            state = tileState.red;
+        }
         fight = true;
+      
     }
 
     // getting the cost out of it
@@ -115,7 +131,7 @@ public abstract class tile : MonoBehaviour
     }
 
     //what happens when clicked on
-    void OnMouseDown()
+    public void clicked()
     {
         if (value > 0)
         {
@@ -125,10 +141,17 @@ public abstract class tile : MonoBehaviour
             mum.combatClicked(this);
 
     }
+    //what happens when clicked on
+    void OnMouseDown()
+    {
+        clicked();
+
+    }
 
     //removing all movement from unit changes
     public void clean()
     {
+        
         clear();
         value = 0;
         fight = false;
@@ -137,10 +160,14 @@ public abstract class tile : MonoBehaviour
     // just removes the colours not the other things
     public void clear()
     {
-        colour.r = red;
-        colour.g = green;
-        colour.b = blue;
-        cubeRenderer.material.color = colour;
+        if (transform.childCount > 0)
+        {
+            for (int i = transform.childCount; i > 0; i--)
+            {
+                Destroy(transform.GetChild(i - 1).gameObject, 0f);
+            }
+        }
+        state = tileState.clear;
     }
     public abstract void getInfo(string name);
     public abstract void setValue();

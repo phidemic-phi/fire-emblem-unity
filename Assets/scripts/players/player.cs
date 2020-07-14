@@ -54,6 +54,10 @@ public abstract class player : MonoBehaviour
         }
         return false;
     }
+    public void unitFight(unit guy)
+    {
+        hud.fightUnit(guy);
+    }
 
 
     //helper function, for do I have a unit at location?
@@ -144,7 +148,7 @@ public abstract class player : MonoBehaviour
     //check to see if all my units have moved
     public void moveDone()
     {
-        clear();
+        //clear();
         bool everyone = true;
         for (int i = 0; i < units.Count; i++)
         {

@@ -20,15 +20,7 @@ public class planes : tile
     }
     public override void setValue()
     {  
-        cubeRenderer = GetComponent<Renderer>();
-        red = 0f;
-        green = 1f;
-        blue = 0f;
-
-        colour.r = red;
-        colour.g = green;
-        colour.b = blue;
-        cubeRenderer.material.color = colour;
+        
 
 
         def = 0;

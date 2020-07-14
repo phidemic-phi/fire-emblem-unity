@@ -296,16 +296,24 @@ public abstract class unit : MonoBehaviour
     {
         if (state == unitState.nothing)
         {
-            
-            
+
+
             if (mum.unitClicked(this) == true)
             {
                 state = unitState.selected;
                 oldLocation = transform.position;
             }
-            
+            else
+            {
+                mum.unitFight(this);
+            }
+
         }
-       
+        else
+        {
+            mum.unitFight(this);
+        }
+              
     }
 
 
@@ -358,8 +366,9 @@ public abstract class unit : MonoBehaviour
         
         if (state == unitState.menus)
         {
-            state = unitState.nothing;
+            state = unitState.selected;
             transform.position = oldLocation;
+            mum.Map.revisTiles();
             
         }
         else if (state == unitState.selected)
@@ -368,6 +377,12 @@ public abstract class unit : MonoBehaviour
             mum.clear();
             
         }
+    }
+    public void fullCancel()
+    {
+        transform.position = oldLocation;
+        state = unitState.nothing;
+        mum.clear();
     }
     //gets the values from  classes
     public abstract void setValue();

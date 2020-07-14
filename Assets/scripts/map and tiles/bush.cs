@@ -17,19 +17,7 @@ public class bush : tile
     }
     public override void setValue()
     {
-       cubeRenderer = GetComponent<Renderer>();
-
-
-
-        red = 0.0257209f;
-        green = 0.3207547f;
-        blue = 0.1571333f;
-
-        colour.r = red;
-        colour.g = green;
-        colour.b = blue;
         
-        cubeRenderer.material.color = colour;  
 
 
 

@@ -346,12 +346,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &4178363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -473,12 +469,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &18161824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -600,12 +592,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &18296169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -727,12 +715,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &30713498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -764,7 +748,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -854,12 +838,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &35072632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -981,12 +961,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &52658946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1286,12 +1262,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &93211521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1413,12 +1385,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &95907396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1540,12 +1508,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &113118346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1667,12 +1631,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &149110713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1794,12 +1754,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &157371971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2076,12 +2032,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &194839162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2203,12 +2155,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &203254465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2508,12 +2456,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &221156291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2635,12 +2579,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &221457996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2762,12 +2702,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &229679695
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2799,7 +2735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2889,12 +2825,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &236620432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3016,12 +2948,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &253584536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3053,7 +2981,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3143,12 +3071,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &254910539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3270,12 +3194,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &259616901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3575,12 +3495,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &310195215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3831,12 +3747,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &316130201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3868,7 +3780,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4113,12 +4025,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &363475907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4150,7 +4058,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4240,12 +4148,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &369295767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4545,12 +4449,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &435035328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4827,12 +4727,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &451629912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4954,12 +4850,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &455289549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5081,12 +4973,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &460597851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5208,12 +5096,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &466048431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5335,12 +5219,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &479836121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5462,12 +5342,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &488110600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5499,7 +5375,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5589,12 +5465,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &510228779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5716,12 +5588,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &519981526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5843,12 +5711,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 0, g: 0.8773585, b: 0.12361575, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &527275829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5970,12 +5834,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &527551531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6097,12 +5957,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &530482748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6273,12 +6129,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &589468385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6400,12 +6252,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &603229327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6682,12 +6530,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &640090111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7116,12 +6960,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &703421311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7335,12 +7175,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &720241893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7591,12 +7427,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &757594586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7718,12 +7550,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &760653227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7845,12 +7673,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &800717040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7972,12 +7796,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &800935141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8099,12 +7919,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &825110871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8404,12 +8220,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &838284195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8441,7 +8253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8686,12 +8498,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &870524016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8813,12 +8621,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &880982751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8940,12 +8744,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &894022310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8977,7 +8777,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9060,6 +8860,7 @@ MonoBehaviour:
   buttons: 0
   lastSelection: 0
   combat: {fileID: 0}
+  Map: {fileID: 0}
 --- !u!114 &918295812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9534,12 +9335,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &973985750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9661,12 +9458,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &982476041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9788,12 +9581,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &986892285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9915,12 +9704,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &994735491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10042,12 +9827,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &996964483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10169,12 +9950,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1019524104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10296,12 +10073,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1041114290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10601,12 +10374,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1085109116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11012,12 +10781,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1102151360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11049,7 +10814,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11192,12 +10957,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1132930028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11319,12 +11080,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1191801187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11601,12 +11358,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1212598161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11728,12 +11481,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1220994927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11855,12 +11604,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1227288161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11982,12 +11727,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1237989177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12360,6 +12101,12 @@ MonoBehaviour:
   Y: 0
   affinity: 7
   menu: {fileID: 0}
+  blueSquare: {fileID: 2251085908272365612, guid: 7ae7df66003a08d488ff8f50f1c3123f,
+    type: 3}
+  greenSquare: {fileID: 8635855066914926438, guid: bb7254299e83fbd4fbced8e4252549b8,
+    type: 3}
+  redSquare: {fileID: 4501823119093697698, guid: 4976bb8256b08e54ebaa786b4f0d227f,
+    type: 3}
 --- !u!1 &1268037784
 GameObject:
   m_ObjectHideFlags: 0
@@ -12407,12 +12154,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1268037786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12444,7 +12187,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12534,12 +12277,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1309706221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12571,7 +12310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12704,12 +12443,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1340543510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12831,12 +12566,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1357681237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13087,12 +12818,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1377008506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13214,12 +12941,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1377918714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13341,12 +13064,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1391755015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13468,12 +13187,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1395931612
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13595,12 +13310,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1403170518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13980,12 +13691,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1449797306
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14107,12 +13814,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1454482088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14234,12 +13937,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1457824667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14361,12 +14060,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1474305426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14488,12 +14183,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1508309309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14770,12 +14461,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1525532600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14897,12 +14584,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1557053335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15024,12 +14707,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1564366987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15151,12 +14830,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1582582941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15278,12 +14953,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1586820701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15534,12 +15205,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1593745014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15661,12 +15328,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1602547985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15788,12 +15451,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1602613823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15896,7 +15555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608640839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.75, z: 6}
+  m_LocalPosition: {x: 3, y: 0.75, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1814297889}
@@ -16299,12 +15958,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1624756483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16426,12 +16081,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1634309720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16553,12 +16204,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1673835655
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16590,7 +16237,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16837,12 +16484,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1687605967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16874,7 +16517,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16964,12 +16607,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1700059895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17091,12 +16730,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1729133000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17218,12 +16853,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1752988691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17523,12 +17154,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1761518660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17650,12 +17277,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1779793000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17777,12 +17400,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1790269588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17960,12 +17579,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1820475295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18087,12 +17702,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1829689964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18214,12 +17825,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1839777970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18341,12 +17948,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1867235816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18468,12 +18071,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1887765692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18595,12 +18194,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1891679150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18722,12 +18317,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1895485439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18849,12 +18440,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1932461115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18976,12 +18563,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1933410942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19103,12 +18686,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1933678237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19359,12 +18938,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &1945507976
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19641,12 +19216,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2024180139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19768,12 +19339,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2024672294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19895,12 +19462,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2024726856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20022,12 +19585,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2032472175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20278,12 +19837,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2044770994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20405,12 +19960,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2050326834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20532,12 +20083,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2054238344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20659,12 +20206,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2057763261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20696,7 +20239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20786,12 +20329,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2081712957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20913,12 +20452,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2082576272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21040,12 +20575,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2101237693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21167,12 +20698,8 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
-  red: 0
-  blue: 0
-  green: 0
-  colour: {r: 1, g: 1, b: 1, a: 1}
-  cubeRenderer: {fileID: 0}
   fight: 0
+  state: 0
 --- !u!65 &2119750783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21204,7 +20731,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
