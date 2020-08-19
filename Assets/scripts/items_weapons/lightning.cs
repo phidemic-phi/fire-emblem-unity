@@ -28,7 +28,7 @@ public class lightning : weapon
         damage = damageType.magical;
     }
 
-    public static lightning CreateInstance(int num)
+    public static item CreateInstance(int num)
     {
         var data = ScriptableObject.CreateInstance<lightning>();
         data.Init(num);

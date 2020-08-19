@@ -167,13 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 1
+  starting_invintory: 0000000000000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -182,6 +180,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -200,8 +213,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -235,10 +246,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &1955297
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -346,6 +358,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &4178363
@@ -379,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -469,6 +482,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &18161824
@@ -502,7 +516,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -592,6 +606,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &18296169
@@ -625,7 +640,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -715,6 +730,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &30713498
@@ -748,7 +764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -838,6 +854,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &35072632
@@ -871,7 +888,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -961,6 +978,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &52658946
@@ -994,7 +1012,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1083,21 +1101,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ce727926761c04baf6bf8e8e2351bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 1
+  drop_item: 0
+  starting_invintory: 0100000004000000
+  item_uses: 0000000000000000
   level: 1
+  max_hp: 3
+  strength: 0
+  magic: 4
+  speed: 10
+  skill: 500
+  luck: 0
+  defence: 0
+  resistance: 0
+  affinity: 7
+  exp: 0
   hp: 0
   state: 0
   movetype: 0
   has_weapon: 0
+  skills: []
   invintory: []
-  max_hp: 3
-  strength: 0
-  magic: 0
-  speed: 0
-  skill: 0
-  luck: 0
-  defence: 0
-  resistance: 0
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -1116,8 +1147,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -1151,10 +1180,11 @@ MonoBehaviour:
   light_rank: 2
   dark_rank: 0
   staves_rank: 0
-  affinity: 7
   lord: 1
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &52969313
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1262,6 +1292,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &93211521
@@ -1295,7 +1326,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1385,6 +1416,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &95907396
@@ -1418,7 +1450,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1508,6 +1540,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &113118346
@@ -1541,7 +1574,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1631,6 +1664,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &149110713
@@ -1664,7 +1698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1754,6 +1788,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &157371971
@@ -1787,7 +1822,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2032,6 +2067,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &194839162
@@ -2065,7 +2101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2155,6 +2191,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &203254465
@@ -2188,7 +2225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2277,13 +2314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 5
+  drop_item: 0
+  starting_invintory: 0000000000000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -2292,6 +2327,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -2310,8 +2360,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -2345,10 +2393,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &211464628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2456,6 +2505,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &221156291
@@ -2489,7 +2539,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2579,6 +2629,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &221457996
@@ -2612,7 +2663,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2702,6 +2753,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &229679695
@@ -2735,7 +2787,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2825,6 +2877,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &236620432
@@ -2858,7 +2911,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2948,6 +3001,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &253584536
@@ -2981,7 +3035,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3071,6 +3125,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &254910539
@@ -3104,7 +3159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3194,6 +3249,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &259616901
@@ -3227,7 +3283,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3316,13 +3372,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 0
+  starting_invintory: 00000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -3331,6 +3385,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -3349,8 +3418,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -3384,10 +3451,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &276866357
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3495,6 +3563,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &310195215
@@ -3528,7 +3597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3747,6 +3816,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &316130201
@@ -3780,7 +3850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4025,6 +4095,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &363475907
@@ -4058,7 +4129,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4148,6 +4219,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &369295767
@@ -4181,7 +4253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4270,13 +4342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 0
+  starting_invintory: 00000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -4285,6 +4355,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -4303,8 +4388,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -4338,10 +4421,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &431132213
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4449,6 +4533,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &435035328
@@ -4482,7 +4567,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4727,6 +4812,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &451629912
@@ -4760,7 +4846,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4850,6 +4936,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &455289549
@@ -4883,7 +4970,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4973,6 +5060,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &460597851
@@ -5006,7 +5094,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5096,6 +5184,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &466048431
@@ -5129,7 +5218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5219,6 +5308,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &479836121
@@ -5252,7 +5342,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5342,6 +5432,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &488110600
@@ -5375,7 +5466,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5418,6 +5509,250 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &499518449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 856027748948655539, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9063079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.42261827
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013325868432419771, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352234545663234922, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352234545663234922, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352234545663234922, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352234545663234922, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442221163121264102, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Name
+      value: /
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448412934135856309, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505045011905921476, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676160250119383999, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676160250119383999, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676160250119383999, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676160250119383999, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898030805145491580, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898030805145491580, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898030805145491580, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898030805145491580, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169239081869763766, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311825854762369624, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311825854762369624, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311825854762369624, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311825854762369624, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848658477960984704, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848658477960984704, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848658477960984704, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848658477960984704, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872505866704637640, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445357819719354434, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Name
+      value: mouse over
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445357819719354434, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_TagString
+      value: mouseover
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682225580424949892, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682225580424949892, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682225580424949892, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682225580424949892, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088195193918929275, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707227968248673629, guid: 60a36455b23db21418ab029c43f255d4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60a36455b23db21418ab029c43f255d4, type: 3}
 --- !u!1 &510228777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,6 +5800,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &510228779
@@ -5498,7 +5834,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5588,6 +5924,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &519981526
@@ -5621,7 +5958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5711,6 +6048,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &527275829
@@ -5744,7 +6082,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5834,6 +6172,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &527551531
@@ -5867,7 +6206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5957,6 +6296,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &530482748
@@ -5990,7 +6330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6081,6 +6421,7 @@ MonoBehaviour:
   Map: {fileID: 0}
   foes: []
   allys: []
+  god: {fileID: 0}
   hud: {fileID: 0}
 --- !u!1 &589468383
 GameObject:
@@ -6129,6 +6470,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &589468385
@@ -6162,7 +6504,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6252,6 +6594,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &603229327
@@ -6285,7 +6628,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6530,6 +6873,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &640090111
@@ -6563,7 +6907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6912,7 +7256,417 @@ MonoBehaviour:
   Map: {fileID: 0}
   foes: []
   allys: []
+  god: {fileID: 0}
   hud: {fileID: 0}
+--- !u!1001 &695227871
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 918295815}
+    m_Modifications:
+    - target: {fileID: 540108103292870272, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 540108103292870272, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 540108103292870272, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 540108103292870272, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178168019447343621, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178168019447343621, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178168019447343621, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178168019447343621, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475634835229523429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475634835229523429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475634835229523429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475634835229523429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939071762892134904, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939071762892134904, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939071762892134904, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939071762892134904, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063831288924382007, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063831288924382007, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063831288924382007, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063831288924382007, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094400, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_Name
+      value: Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -355.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -144.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934626179010795229, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934626179010795229, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934626179010795229, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934626179010795229, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127634962684573560, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127634962684573560, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127634962684573560, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127634962684573560, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127634962684573560, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340297202650737405, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340297202650737405, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340297202650737405, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340297202650737405, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613992879133006429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613992879133006429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613992879133006429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613992879133006429, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268156344461758072, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268156344461758072, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268156344461758072, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268156344461758072, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869854534751515075, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869854534751515075, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869854534751515075, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869854534751515075, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008322550622413923, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008322550622413923, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008322550622413923, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008322550622413923, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553661651778713774, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553661651778713774, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553661651778713774, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553661651778713774, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553661651778713774, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938312348531364276, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938312348531364276, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938312348531364276, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938312348531364276, guid: 91593e2fa59338048943748ae713bd87,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91593e2fa59338048943748ae713bd87, type: 3}
 --- !u!1 &703421309
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,6 +7714,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &703421311
@@ -6993,7 +7748,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7122,7 +7877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -4.7, y: 3, z: 0}
+  m_LocalPosition: {x: 856, y: 526, z: -511}
   m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7175,6 +7930,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &720241893
@@ -7208,7 +7964,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7427,6 +8183,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &757594586
@@ -7460,7 +8217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7550,6 +8307,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &760653227
@@ -7583,7 +8341,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7673,6 +8431,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &800717040
@@ -7706,7 +8465,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7796,6 +8555,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &800935141
@@ -7829,7 +8589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7919,6 +8679,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &825110871
@@ -7952,7 +8713,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8041,13 +8802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 0
+  starting_invintory: 00000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -8056,6 +8815,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -8074,8 +8848,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -8109,10 +8881,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &830029946
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8220,6 +8993,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &838284195
@@ -8253,7 +9027,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8498,6 +9272,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &870524016
@@ -8531,7 +9306,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8621,6 +9396,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &880982751
@@ -8654,7 +9430,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8744,6 +9520,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &894022310
@@ -8777,7 +9554,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8861,6 +9638,12 @@ MonoBehaviour:
   lastSelection: 0
   combat: {fileID: 0}
   Map: {fileID: 0}
+  prev: {fileID: 0}
+  prevScript: {fileID: 0}
+  cam: {fileID: 0}
+  infoScript: {fileID: 0}
+  info: {fileID: 0}
+  over: {fileID: 0}
 --- !u!114 &918295812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,7 +9692,7 @@ Canvas:
   m_GameObject: {fileID: 918295810}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -8944,8 +9727,11 @@ RectTransform:
   - {fileID: 313521891}
   - {fileID: 672711792}
   - {fileID: 1944429201}
+  - {fileID: 1977173464}
+  - {fileID: 1703703024}
+  - {fileID: 993158771}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9016,7 +9802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -9081,7 +9867,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -9101,7 +9887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -9116,7 +9902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  move: 1
+  move: 0
 --- !u!54 &963194230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9335,6 +10121,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &973985750
@@ -9368,7 +10155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9458,6 +10245,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &982476041
@@ -9491,7 +10279,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9581,6 +10369,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &986892285
@@ -9614,7 +10403,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9657,6 +10446,12 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &993158771 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2124601427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994735489
 GameObject:
   m_ObjectHideFlags: 0
@@ -9704,6 +10499,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &994735491
@@ -9737,7 +10533,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9827,6 +10623,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &996964483
@@ -9860,7 +10657,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9903,6 +10700,24 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019476760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7445357819719354434, guid: 60a36455b23db21418ab029c43f255d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 499518449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019476761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019476760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e49f8dc636a71d449be9753f204b6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019524102
 GameObject:
   m_ObjectHideFlags: 0
@@ -9950,6 +10765,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1019524104
@@ -9983,7 +10799,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10073,6 +10889,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1041114290
@@ -10106,7 +10923,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10195,21 +11012,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c66f61e03f17f4ca33a3b37b135d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 2
+  drop_item: 0
+  starting_invintory: 0000000000000000
+  item_uses: 
   level: 1
+  max_hp: 0
+  strength: 0
+  magic: 0
+  speed: 10
+  skill: 500
+  luck: 0
+  defence: 0
+  resistance: 0
+  affinity: 0
+  exp: 0
   hp: 0
   state: 0
   movetype: 0
   has_weapon: 0
+  skills: []
   invintory: []
-  max_hp: 0
-  strength: 0
-  magic: 0
-  speed: 0
-  skill: 0
-  luck: 0
-  defence: 0
-  resistance: 0
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -10228,8 +11058,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -10263,10 +11091,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &1082394236
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10374,6 +11203,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1085109116
@@ -10407,7 +11237,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10781,6 +11611,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1102151360
@@ -10814,7 +11645,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10891,8 +11722,9 @@ Transform:
   - {fileID: 676374972}
   - {fileID: 1264878933}
   - {fileID: 1315312568}
+  - {fileID: 1695436890}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1129315688
 MonoBehaviour:
@@ -10910,6 +11742,10 @@ MonoBehaviour:
   yellow: {fileID: 0}
   red: {fileID: 0}
   green: {fileID: 0}
+  text: {fileID: 1803145975024775934, guid: 9b525fb4d4c38cc4cb35307cf37f9a08, type: 3}
+  box: {fileID: 0}
+  trigger: {fileID: 0}
+  turn_count: 0
 --- !u!1 &1132930026
 GameObject:
   m_ObjectHideFlags: 0
@@ -10957,6 +11793,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1132930028
@@ -10990,7 +11827,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11080,6 +11917,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1191801187
@@ -11113,7 +11951,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11358,6 +12196,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1212598161
@@ -11391,7 +12230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11481,6 +12320,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1220994927
@@ -11514,7 +12354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11604,6 +12444,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1227288161
@@ -11637,7 +12478,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11727,6 +12568,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1237989177
@@ -11760,7 +12602,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12154,6 +12996,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1268037786
@@ -12187,7 +13030,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12277,6 +13120,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1309706221
@@ -12310,7 +13154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12396,6 +13240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf93d5cb5abb9c4083731ccd1711a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  order: 
+  fancy: {fileID: 8662670575584367509, guid: 323d2559cecc4774ab014d40bee471a5, type: 3}
+  cam: {fileID: 0}
+  amount: 0
 --- !u!1 &1340543508
 GameObject:
   m_ObjectHideFlags: 0
@@ -12443,6 +13291,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1340543510
@@ -12476,7 +13325,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12566,6 +13415,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1357681237
@@ -12599,7 +13449,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12771,6 +13621,161 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361440550}
   m_CullTransparentMesh: 0
+--- !u!1 &1369281721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369281722}
+  - component: {fileID: 1369281724}
+  - component: {fileID: 1369281723}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1369281722
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369281721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1977173464}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.75, y: -0.28999996}
+  m_SizeDelta: {x: -0.29999316, y: -1.8200002}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1369281723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369281721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 8
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: 0
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1369281723}
+    characterCount: 1
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1369281724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369281721}
+  m_CullTransparentMesh: 0
 --- !u!1 &1377008504
 GameObject:
   m_ObjectHideFlags: 0
@@ -12818,6 +13823,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1377008506
@@ -12851,7 +13857,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12941,6 +13947,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1377918714
@@ -12974,7 +13981,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13064,6 +14071,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1391755015
@@ -13097,7 +14105,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13187,6 +14195,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1395931612
@@ -13220,7 +14229,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13310,6 +14319,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1403170518
@@ -13343,7 +14353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13691,6 +14701,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1449797306
@@ -13724,7 +14735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13814,6 +14825,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1454482088
@@ -13847,7 +14859,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13937,6 +14949,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1457824667
@@ -13970,7 +14983,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14060,6 +15073,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1474305426
@@ -14093,7 +15107,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14183,6 +15197,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1508309309
@@ -14216,7 +15231,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14461,6 +15476,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1525532600
@@ -14494,7 +15510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14584,6 +15600,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1557053335
@@ -14617,7 +15634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14707,6 +15724,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1564366987
@@ -14740,7 +15758,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14830,6 +15848,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1582582941
@@ -14863,7 +15882,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14953,6 +15972,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1586820701
@@ -14986,7 +16006,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15205,6 +16225,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1593745014
@@ -15238,7 +16259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15328,6 +16349,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1602547985
@@ -15361,7 +16383,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15451,6 +16473,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1602613823
@@ -15484,7 +16507,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15573,21 +16596,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 0
+  starting_invintory: 00000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
-  max_hp: 0
+  max_hp: 100
   strength: 0
   magic: 0
   speed: 0
   skill: 0
   luck: 0
-  defence: 0
+  defence: 20
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -15606,8 +16642,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -15641,10 +16675,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &1608640842
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15910,6 +16945,7 @@ MonoBehaviour:
   Map: {fileID: 0}
   foes: []
   allys: []
+  god: {fileID: 0}
   hud: {fileID: 0}
 --- !u!1 &1624756481
 GameObject:
@@ -15958,6 +16994,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1624756483
@@ -15991,7 +17028,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16081,6 +17118,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1634309720
@@ -16114,7 +17152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16204,6 +17242,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1673835655
@@ -16237,7 +17276,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16484,6 +17523,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1687605967
@@ -16517,7 +17557,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16560,6 +17600,60 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1695436889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695436890}
+  - component: {fileID: 1695436891}
+  m_Layer: 0
+  m_Name: event holder
+  m_TagString: events
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695436890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695436889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1784663, y: 10.408161, z: -9.020043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1129315687}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1695436891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695436889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c2d53dbff9350469feb217e28d7825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 01000000
+  turnNumber: 04000000
+  turnTrigger: 00000000
+  unitGroups: 00000000
+  owner:
+  - {fileID: 1624283460}
+  classes:
+  - {fileID: 3505598066271112261, guid: 6a3ccd070af8bfb46a17c6be0e9a31d4, type: 3}
+  who: 04000000
+  location:
+  - {x: 0, y: 0.75, z: 7}
 --- !u!1 &1700059893
 GameObject:
   m_ObjectHideFlags: 0
@@ -16607,6 +17701,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1700059895
@@ -16640,7 +17735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16683,6 +17778,12 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1703703024 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2934331817210094403, guid: 91593e2fa59338048943748ae713bd87,
+    type: 3}
+  m_PrefabInstance: {fileID: 695227871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1729132998
 GameObject:
   m_ObjectHideFlags: 0
@@ -16730,6 +17831,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1729133000
@@ -16763,7 +17865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16853,6 +17955,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1752988691
@@ -16886,7 +17989,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16975,13 +18078,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd9541cf1918314787aea75144073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
+  me: 3
+  drop_item: 0
+  starting_invintory: 00000000
+  item_uses: 
   level: 0
-  hp: 0
-  state: 0
-  movetype: 0
-  has_weapon: 0
-  invintory: []
   max_hp: 0
   strength: 0
   magic: 0
@@ -16990,6 +18091,21 @@ MonoBehaviour:
   luck: 0
   defence: 0
   resistance: 0
+  affinity: 0
+  exp: 0
+  hp: 0
+  state: 0
+  movetype: 0
+  has_weapon: 0
+  skills: []
+  invintory: []
+  tempStrength: 0
+  tempMagic: 0
+  tempSpeed: 0
+  tempSkill: 0
+  tempLuck: 0
+  tempDefence: 0
+  tempResistance: 0
   cap_max_hp: 0
   cap_str: 0
   cap_mag: 0
@@ -17008,8 +18124,6 @@ MonoBehaviour:
   growth_res: 0
   move: 0
   attack: 0
-  physicalDef: 0
-  magicalDef: 0
   AS: 0
   hit: 0
   crit: 0
@@ -17043,10 +18157,11 @@ MonoBehaviour:
   light_rank: 0
   dark_rank: 0
   staves_rank: 0
-  affinity: 0
   lord: 0
   going: 
   mum: {fileID: 0}
+  personallity: {fileID: 0}
+  className: 
 --- !u!135 &1757091615
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17154,6 +18269,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1761518660
@@ -17187,7 +18303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17277,6 +18393,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1779793000
@@ -17310,7 +18427,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17400,6 +18517,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1790269588
@@ -17433,7 +18551,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17510,6 +18628,7 @@ MonoBehaviour:
   Map: {fileID: 0}
   foes: []
   allys: []
+  god: {fileID: 0}
   hud: {fileID: 0}
 --- !u!4 &1814297889
 Transform:
@@ -17579,6 +18698,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1820475295
@@ -17612,7 +18732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17702,6 +18822,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1829689964
@@ -17735,7 +18856,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17825,6 +18946,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1839777970
@@ -17858,7 +18980,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17948,6 +19070,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1867235816
@@ -17981,7 +19104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18071,6 +19194,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1887765692
@@ -18104,7 +19228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18194,6 +19318,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1891679150
@@ -18227,7 +19352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18317,6 +19442,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1895485439
@@ -18350,7 +19476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18440,6 +19566,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1932461115
@@ -18473,7 +19600,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18563,6 +19690,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1933410942
@@ -18596,7 +19724,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18686,6 +19814,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1933678237
@@ -18719,7 +19848,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18938,6 +20067,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &1945507976
@@ -18971,7 +20101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19014,6 +20144,135 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 117
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1977173463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977173464}
+  - component: {fileID: 1977173467}
+  - component: {fileID: 1977173466}
+  - component: {fileID: 1977173465}
+  m_Layer: 5
+  m_Name: custom (8)
+  m_TagString: customButton
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1977173464
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977173463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1369281722}
+  m_Father: {fileID: 918295815}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 415, y: 186}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1977173465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977173463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1977173466}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918295811}
+        m_MethodName: varibleButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1977173466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977173463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1977173467
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977173463}
+  m_CullTransparentMesh: 0
 --- !u!1 &2021748122
 GameObject:
   m_ObjectHideFlags: 0
@@ -19216,6 +20475,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2024180139
@@ -19249,7 +20509,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19339,6 +20599,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2024672294
@@ -19372,7 +20633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19462,6 +20723,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2024726856
@@ -19495,7 +20757,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19585,6 +20847,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2032472175
@@ -19618,7 +20881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19837,6 +21100,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2044770994
@@ -19870,7 +21134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19960,6 +21224,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2050326834
@@ -19993,7 +21258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20083,6 +21348,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2054238344
@@ -20116,7 +21382,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20206,6 +21472,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2057763261
@@ -20239,7 +21506,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20329,6 +21596,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2081712957
@@ -20362,7 +21630,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7b3c0218593d72646b41f99759ed9dac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20452,6 +21720,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2082576272
@@ -20485,7 +21754,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20575,6 +21844,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2101237693
@@ -20608,7 +21878,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20698,6 +21968,7 @@ MonoBehaviour:
   footdragon: 0
   dragon: 0
   rafel: 0
+  waitable: 1
   fight: 0
   state: 0
 --- !u!65 &2119750783
@@ -20731,7 +22002,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6c6279d765f3864e85a1dc617cb6564, type: 2}
+  - {fileID: 2100000, guid: 8ccf99e7d1ca8f54c9d0439d432e1820, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20774,3 +22045,997 @@ Transform:
   m_Father: {fileID: 1264878933}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2124601427
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 918295815}
+    m_Modifications:
+    - target: {fileID: 586424889338309294, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586424889338309294, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586424889338309294, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586424889338309294, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782161350455747304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782161350455747304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782161350455747304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782161350455747304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782161350455747304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905274171478007939, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905274171478007939, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905274171478007939, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 905274171478007939, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954252250871085879, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954252250871085879, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954252250871085879, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954252250871085879, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368124429184193304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368124429184193304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368124429184193304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368124429184193304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368124429184193304, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453966564617850070, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453966564617850070, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453966564617850070, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453966564617850070, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602530963375792774, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602530963375792774, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602530963375792774, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602530963375792774, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697191290771391893, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697191290771391893, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697191290771391893, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697191290771391893, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732924522353922448, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732924522353922448, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732924522353922448, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732924522353922448, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932553997078023570, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932553997078023570, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932553997078023570, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932553997078023570, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420497098964555396, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420497098964555396, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420497098964555396, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420497098964555396, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420497098964555396, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473741935829160513, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473741935829160513, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473741935829160513, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473741935829160513, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501926708244432859, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501926708244432859, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501926708244432859, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501926708244432859, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271200, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652503075461271201, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_Name
+      value: unit info
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745920659916356981, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745920659916356981, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745920659916356981, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745920659916356981, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869929713477124260, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869929713477124260, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869929713477124260, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869929713477124260, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283094708056926896, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283094708056926896, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283094708056926896, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283094708056926896, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289066566190530881, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289066566190530881, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289066566190530881, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289066566190530881, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342037932909106636, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342037932909106636, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342037932909106636, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342037932909106636, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607124667944590142, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607124667944590142, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607124667944590142, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607124667944590142, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071106893488991289, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071106893488991289, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687036256229269298, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687036256229269298, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687036256229269298, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687036256229269298, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712653139052351657, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712653139052351657, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712653139052351657, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712653139052351657, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048418780562077927, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048418780562077927, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048418780562077927, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048418780562077927, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150543034772055492, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150543034772055492, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150543034772055492, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150543034772055492, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150543034772055492, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493987459902515148, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493987459902515148, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493987459902515148, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493987459902515148, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575393347514360974, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575393347514360974, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575393347514360974, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575393347514360974, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618015083788149914, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618015083788149914, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618015083788149914, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618015083788149914, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718695586942052863, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718695586942052863, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718695586942052863, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718695586942052863, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764808615099215903, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764808615099215903, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764808615099215903, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764808615099215903, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066712178134926833, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066712178134926833, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066712178134926833, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066712178134926833, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066712178134926833, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148757157357871420, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148757157357871420, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148757157357871420, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148757157357871420, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563982867749306658, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563982867749306658, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563982867749306658, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563982867749306658, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584174816420515049, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584174816420515049, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584174816420515049, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584174816420515049, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627895447366429968, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627895447366429968, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627895447366429968, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627895447366429968, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697303527815087383, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697303527815087383, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697303527815087383, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697303527815087383, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287555280393960891, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287555280393960891, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287555280393960891, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287555280393960891, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408803092562231924, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408803092562231924, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408803092562231924, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408803092562231924, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098309793171210536, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098309793171210536, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098309793171210536, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098309793171210536, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098309793171210536, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324477533713783191, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324477533713783191, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324477533713783191, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324477533713783191, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540087541254660640, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540087541254660640, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540087541254660640, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540087541254660640, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763904882244127703, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763904882244127703, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763904882244127703, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763904882244127703, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137272968540900022, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137272968540900022, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137272968540900022, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137272968540900022, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137272968540900022, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd57b948a07ea4c41ba4fc6ef3dbd99b, type: 3}

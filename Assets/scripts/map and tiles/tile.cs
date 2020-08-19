@@ -28,7 +28,7 @@ public abstract class tile : MonoBehaviour
     public int dragon;
     public int rafel;
 
- 
+    public bool waitable = true;
     private map mum;
     public bool fight;
     public tileState state;

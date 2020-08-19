@@ -21,7 +21,7 @@ public abstract class player : MonoBehaviour
     public map Map;
     public List<player> foes = new List<player>();
     public List<player> allys = new List<player>();
-    private game_controller god;
+    public game_controller god;
     public HUD hud;
 
     // Start is called before the first frame update
@@ -45,7 +45,11 @@ public abstract class player : MonoBehaviour
     // mainly to tell the map and hHUD that a unit was clicked
     public bool unitClicked(unit guy)
     {
-        if (turn == true)
+        if (hud.state == hudState.skillSelect && turn == true)
+        {
+            unitFight(guy);
+        }
+        else if (turn == true && hud.state != hudState.dropping)
         {
           
             hud.getunit(guy);
@@ -54,9 +58,28 @@ public abstract class player : MonoBehaviour
         }
         return false;
     }
+
+    public void mouse(unit person)
+    {
+        if (hud.state != hudState.attack)
+            god.mouse(person);
+        else
+            hud.mouse(person);
+    }
+    public void dropmouse()
+    {
+        if (hud.state != hudState.attack)
+            god.dropmouse();
+        else
+            hud.dropmouse();
+    }
+
+
     public void unitFight(unit guy)
     {
-        hud.fightUnit(guy);
+      
+            hud.fightUnit(guy);
+
     }
 
 
@@ -115,6 +138,16 @@ public abstract class player : MonoBehaviour
         }
         return temp;
     }
+    public bool anyHere(Vector3 location)
+    {
+        if (foeHere(location) == true)
+        {
+            return true;
+        }
+        else
+           return allyHere(location);
+       
+    }
 
     //get the foe that is at location 
     //should always use foe here before this so you know that you will grab one
@@ -125,6 +158,16 @@ public abstract class player : MonoBehaviour
         {
             if (foes[i].isHere(location))
                 return foes[i].getHere(location);
+        }
+        return null;
+    }
+    public unit getAlly(Vector3 location)
+    {
+
+        for (int i = 0; i < allys.Count; i++)
+        {
+            if (allys[i].isHere(location))
+                return allys[i].getHere(location);
         }
         return null;
     }
@@ -161,10 +204,165 @@ public abstract class player : MonoBehaviour
         }
     }
 
+
+    public void death (unit person)
+    {
+        for( int i = 0; i < units.Count; i++)
+        {
+           if( units[i]== person)
+            {
+                units.RemoveAt(i);
+                Destroy(person.gameObject, 0.5f);
+                return;
+            }
+
+        }
+    }
+    public void skillMarkAll(unit user)
+    {
+        Map.clearTiles();
+        Vector3 location = user.transform.position;
+        if (allyHere(location + Vector3.forward )== true || foeHere(location + Vector3.forward) == true)
+        {
+            Map.makeGreen(location + Vector3.forward);
+        }
+        if (allyHere(location + Vector3.back) == true || foeHere(location + Vector3.back) == true)
+        {
+            Map.makeGreen(location + Vector3.back);
+        }
+        if (allyHere(location + Vector3.left) == true || foeHere(location + Vector3.left) == true)
+        {
+            Map.makeGreen(location + Vector3.left);
+        }
+        if (allyHere(location + Vector3.right) == true || foeHere(location + Vector3.right) == true)
+        {
+            Map.makeGreen(location + Vector3.right);
+        }
+
+    }
+    public void skillMarkAlly(unit user)
+    {
+        Map.clearTiles();
+        Vector3 location = user.transform.position;
+        if (allyHere(location + Vector3.forward) == true)
+        {
+            Map.makeGreen(location + Vector3.forward);
+        }
+        if (allyHere(location + Vector3.back) == true)
+        {
+            Map.makeGreen(location + Vector3.back);
+        }
+        if (allyHere(location + Vector3.left) == true)
+        {
+            Map.makeGreen(location + Vector3.left);
+        }
+        if (allyHere(location + Vector3.right) == true )
+        {
+            Map.makeGreen(location + Vector3.right);
+        }
+    }
+    public void skillMarkFoe(unit user)
+    {
+        Map.clearTiles();
+        Vector3 location = user.transform.position;
+        if ( foeHere(location + Vector3.forward) == true)
+        {
+            Map.makeGreen(location + Vector3.forward);
+        }
+        if ( foeHere(location + Vector3.back) == true)
+        {
+            Map.makeGreen(location + Vector3.back);
+        }
+        if (foeHere(location + Vector3.left) == true)
+        {
+            Map.makeGreen(location + Vector3.left);
+        }
+        if ( foeHere(location + Vector3.right) == true)
+        {
+            Map.makeGreen(location + Vector3.right);
+        }
+    }
+    public bool anyNextTo(unit user , skill ability)
+    {
+        Vector3 location = user.transform.position;
+        if (allyHere(location + Vector3.forward) == true || foeHere(location + Vector3.forward) == true)
+        {
+            if (ability.useable(user, Vector3.forward, Map))
+                 return true;
+        }
+        if (allyHere(location + Vector3.back) == true || foeHere(location + Vector3.back) == true)
+        {
+            if (ability.useable(user, Vector3.back, Map))
+                return true;
+        }
+        if (allyHere(location + Vector3.left) == true || foeHere(location + Vector3.left) == true)
+        {
+            if (ability.useable(user, Vector3.left, Map))
+                return true;
+        }
+        if (allyHere(location + Vector3.right) == true || foeHere(location + Vector3.right) == true)
+        {
+            if (ability.useable(user, Vector3.right, Map))
+                return true;
+        }
+        return false;
+    }
+    public bool allyNextTo(unit user, skill ability)
+    {
+        Vector3 location = user.transform.position;
+        if (allyHere(location + Vector3.forward) == true )
+        {
+            if (ability.useable(user, Vector3.forward, Map))
+                return true;
+        }
+        if (allyHere(location + Vector3.back) == true )
+        {
+            if (ability.useable(user, Vector3.back, Map))
+                return true;
+        }
+        if (allyHere(location + Vector3.left) == true )
+        {
+            if (ability.useable(user, Vector3.left, Map))
+                return true;
+        }
+        if (allyHere(location + Vector3.right) == true )
+        {
+            if (ability.useable(user, Vector3.right, Map))
+                return true;
+        }
+        return false;
+    }
+    public bool foeNextTo(unit user, skill ability)
+    {
+        Vector3 location = user.transform.position;
+        if ( foeHere(location + Vector3.forward) == true)
+        {
+            if (ability.useable(user, Vector3.forward, Map))
+                return true;
+        }
+        if ( foeHere(location + Vector3.back) == true)
+        {
+            if (ability.useable(user, Vector3.back, Map))
+                return true;
+        }
+        if (foeHere(location + Vector3.left) == true)
+        {
+            if (ability.useable(user, Vector3.left, Map))
+                return true;
+        }
+        if (foeHere(location + Vector3.right) == true)
+        {
+            if (ability.useable(user, Vector3.right, Map))
+                return true;
+        }
+        return false;
+    }
+
     //clearing the movement colours
     public void clear()
     {
         Map.cleanTiles();
     }
     public abstract void setup();
+    public abstract void dropMenu(unit person);
 }

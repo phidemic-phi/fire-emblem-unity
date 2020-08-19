@@ -14,13 +14,19 @@ public abstract class weapon : item
     public int weapon_exp;
   
 
-    public override void use(unit person) { }
+    public override bool use(unit person)
+    {
+        uses--;
+        if (uses <= 0)
+            return true;
+        return false;
+    }
     /// <summary>
     /// gets the commands that can be used on this
     /// </summary>
     /// <returns>a list of strings that each are command that can be used on this item</returns>
     public override List<string> commandList() {
-        List<string> commands = new List<string>(); ;
+        List<string> commands = new List<string>();
         commands.Add("Equip");
         commands.Add("Drop");
 

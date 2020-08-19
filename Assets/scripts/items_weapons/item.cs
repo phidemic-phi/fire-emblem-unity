@@ -15,7 +15,7 @@ public abstract class item : ScriptableObject
     public damageType damage = damageType.physical;
 
 
-    public abstract void use(unit person);
+    public abstract bool use(unit person);
     public abstract void getStats(ref int might, ref int hit, ref int crit, ref int weight, ref int min_range, ref int max_range, ref damageType dmg);
     public abstract bool equipable(unit person);
     public abstract List<string> commandList();

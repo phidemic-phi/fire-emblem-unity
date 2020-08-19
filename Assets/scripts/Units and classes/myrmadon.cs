@@ -20,8 +20,9 @@ public class myrmadon : unit
         move += 5;
         sword_rank = Weapon_rank.D;
         movetype = MoveType.foot;
+        className = "Myrmadon";
 
-
+        skills.Add(shove.CreateInstance());
 
     }
 }

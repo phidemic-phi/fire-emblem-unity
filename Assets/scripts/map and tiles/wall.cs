@@ -35,5 +35,6 @@ public class wall : tile
         footdragon = 99;
         dragon = 99;
         rafel = 99;
+        waitable = false;
     }
 }

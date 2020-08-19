@@ -9,10 +9,15 @@ public class redPlayer : player
     public override void setup()
     {
         turn = false;
+        allys.Add(this);
         foes.Add(GameObject.FindGameObjectWithTag("player").GetComponent(typeof(player)) as player);
         foes.Add(GameObject.FindGameObjectWithTag("ally player").GetComponent(typeof(player)) as player);
         foes.Add(GameObject.FindGameObjectWithTag("green player").GetComponent(typeof(player)) as player);
        
+    }
+    public override void dropMenu(unit person)
+    {
+
     }
 }
 

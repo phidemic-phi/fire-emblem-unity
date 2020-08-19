@@ -101,12 +101,12 @@ public class map : MonoBehaviour
         cleanTiles();
         selected = guy;
         Vector3 location = guy.transform.position;
-        
-        recursive((int)location[0], (int)location[2], guy.movetype, guy.move + 1);
        
-        makeRed((int)location[0], (int)location[2], 0);
-        tiles[(int)location[0]][(int)location[2]].set_blue();
+            recursive((int)location[0], (int)location[2], guy.movetype, guy.move + 1);
 
+            makeRed((int)location[0], (int)location[2], 0);
+            tiles[(int)location[0]][(int)location[2]].set_blue();
+        
     }
 
     /// <summary>
@@ -121,13 +121,13 @@ public class map : MonoBehaviour
     {
        
         tiles[x][y].value = move;
-        if (x != X)
+        if (x < X)
         {
             if (tiles[x + 1][y].value < (move - tiles[x + 1][y].cost(type)))
                 if(!foeHere(tiles[x + 1][y]))
                      recursive(x + 1, y, type, move - tiles[x + 1][y].cost(type));
         }
-        if (x != 0)
+        if (x > 0)
         {
             if (tiles[x - 1][y].value < (move - tiles[x - 1][y].cost(type)))
                 if (!foeHere(tiles[x - 1][y]))
@@ -137,13 +137,13 @@ public class map : MonoBehaviour
 
 
 
-        if (y != Y)
+        if (y < Y)
         {
             if (tiles[x][y + 1].value < (move - tiles[x][y + 1].cost(type)))
                 if (!foeHere(tiles[x][y + 1]))
                     recursive(x, y + 1, type, move - tiles[x][y + 1].cost(type));
         }
-        if (y != 0)
+        if (y > 0)
         {
             if (tiles[x][y - 1].value < (move - tiles[x][y - 1].cost(type)))
                 if (!foeHere(tiles[x][y - 1]))
@@ -155,7 +155,7 @@ public class map : MonoBehaviour
         else
         {
             tiles[x][y].set_blue();
-            makeRed(x,y,0);
+            makeRed(x,y);
         }
         return;
     }
@@ -167,12 +167,12 @@ public class map : MonoBehaviour
     /// <param name="x">x location for the tile we are at</param>
     /// <param name="y">y location for the tile we are at</param>
     /// <param name="distance">how far we are from the unit/where the unit could be</param>
-    public void makeRed(int x, int y, int distance)
+    public void makeRed(int x, int y, int distance =0 )
     {
         distance += 1;
         if (distance <= selected.max_range)
         {
-            if (x != X)
+            if (x < X)
             {
 
                 if (distance >= selected.min_range)
@@ -181,7 +181,7 @@ public class map : MonoBehaviour
 
 
             }
-            if (x != 0)
+            if (x > 0)
             {
 
                 
@@ -194,7 +194,7 @@ public class map : MonoBehaviour
 
 
 
-                if (y != Y)
+                if (y < Y)
                 {
 
 
@@ -204,7 +204,7 @@ public class map : MonoBehaviour
 
 
                 }
-                if (y != 0)
+                if (y > 0)
                 {
 
                     if (distance >= selected.min_range)
@@ -218,6 +218,12 @@ public class map : MonoBehaviour
             }
         }
     }
+
+    public void makeGreen(Vector3 location)
+    {
+        tiles[(int)location[0]][(int)location[2]].set_green();
+    }
+
     /// <summary>
     /// is there a for here, for the unit selected
     /// </summary>
@@ -261,7 +267,13 @@ public class map : MonoBehaviour
                     selected.state = unitState.menus;
                 }
             }
+            
         }
+        if (menu.state == hudState.skillSelect)
+        {
+            menu.fightTile(spot);
+        }
+
     }
 
     /// <summary>
@@ -375,6 +387,17 @@ public class map : MonoBehaviour
                     tiles[x][y].set_red();
                 }
         }
+    }
+    public bool waitAble(Vector3 location)
+    {
+        int x = (int)location[0];
+        int y = (int)location[2];
+        if (x < 0 || x > X || y < 0 || y > Y)
+            return false;
+        if (selected.mum.anyHere(location) == true)
+            return false;
+
+        return tiles[x][y].waitable;
     }
 }
 

@@ -15,5 +15,9 @@ public enum Item_type { consumable,sword, lance,axe,knife, bow,light,dark,wind,f
 public enum triangle {  yes, no , even}
 public enum damageType { physical, magical}
 public enum unitState { nothing, selected, moving, menus, done}
-public enum hudState { nothing, normal, attackItem, attack, itemList, item, blueCommand, yellowCommand }
+public enum hudState { nothing, normal, attackItem, attack, itemList, item, blueCommand, yellowCommand, dropping, skillSelect }
 public enum tileState { clear, green, blue, red}
+public enum combatOrder { attack, defend}
+public enum ID { none,miccy, edward, bandit, leo, pugo}
+public enum itemName { none,light, ironSword,steelSword,herb,bronzeAxe, ironAxe, dracosheild, vulnerary }
+public enum eventType { item, units, stats, mapChange, status, AIChange}

@@ -17,6 +17,11 @@ public class game_controller : MonoBehaviour
     public player yellow;
     public player red;
     public player green;
+
+    public GameObject text;
+    public mouseover box;
+    public events trigger;
+    public int turn_count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +30,15 @@ public class game_controller : MonoBehaviour
        yellow =  GameObject.FindGameObjectWithTag("ally player").GetComponent(typeof(player)) as player;
        green = GameObject.FindGameObjectWithTag("green player").GetComponent(typeof(player)) as player;
         red = GameObject.FindGameObjectWithTag("red player").GetComponent(typeof(player)) as player;
+        box = GameObject.FindGameObjectWithTag("mouseover").GetComponent(typeof(mouseover)) as mouseover;
+        trigger = GameObject.FindGameObjectWithTag("events").GetComponent(typeof(events)) as events;
     }
     // manages the players turns so as soon as one is done we go to the next player
     public void turnDone()
     {
-        if(blue.turn == true)
+        turn_count++;
+        trigger.turn(turn_count);
+        if (blue.turn == true)
         {
             blue.turn = false;
             yellow.turnStart();
@@ -49,5 +58,14 @@ public class game_controller : MonoBehaviour
             green.turn = false;
             blue.turnStart();
         }
+      
+    }
+    public void mouse(unit person)
+    {
+        box.take(person);
+    }
+    public void dropmouse()
+    {
+        box.loose();
     }
 }

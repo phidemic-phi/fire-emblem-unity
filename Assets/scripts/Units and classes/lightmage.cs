@@ -20,8 +20,9 @@ public class lightmage :unit
         move += 5;
         light_rank = Weapon_rank.D;
         movetype = MoveType.mage;
+        className = "Light Mage";
 
-       
-
+        skills.Add(shove.CreateInstance());
+        skills.Add(sacrifice.CreateInstance());
     }
 }

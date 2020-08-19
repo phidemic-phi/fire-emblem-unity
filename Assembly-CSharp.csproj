@@ -95,18 +95,28 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\scripts\HUD\HUD.cs" />
-    <Compile Include="Assets\scripts\Units and classes\bandit.cs" />
+    <Compile Include="Assets\mouseoverUI.cs" />
+    <Compile Include="Assets\rotation.cs" />
+    <Compile Include="Assets\scripts\HUD and combat me\HUD.cs" />
+    <Compile Include="Assets\scripts\HUD and combat me\combatmed.cs" />
+    <Compile Include="Assets\scripts\HUD and combat me\combatprevew.cs" />
+    <Compile Include="Assets\scripts\HUD and combat me\dmg_movement.cs" />
+    <Compile Include="Assets\scripts\HUD and combat me\mouseover.cs" />
+    <Compile Include="Assets\scripts\Units and classes\archer.cs" />
+    <Compile Include="Assets\scripts\Units and classes\brigand.cs" />
     <Compile Include="Assets\scripts\Units and classes\lightmage.cs" />
     <Compile Include="Assets\scripts\Units and classes\myrmadon.cs" />
     <Compile Include="Assets\scripts\Units and classes\unit.cs" />
     <Compile Include="Assets\scripts\camera.cs" />
-    <Compile Include="Assets\scripts\combatmed.cs" />
     <Compile Include="Assets\scripts\enum.cs" />
+    <Compile Include="Assets\scripts\events.cs" />
     <Compile Include="Assets\scripts\game_controller.cs" />
     <Compile Include="Assets\scripts\items_weapons\axes.cs" />
+    <Compile Include="Assets\scripts\items_weapons\consumableItems.cs" />
+    <Compile Include="Assets\scripts\items_weapons\healingItems.cs" />
     <Compile Include="Assets\scripts\items_weapons\item.cs" />
     <Compile Include="Assets\scripts\items_weapons\lightning.cs" />
+    <Compile Include="Assets\scripts\items_weapons\otherItems.cs" />
     <Compile Include="Assets\scripts\items_weapons\swords\Kiling edge.cs" />
     <Compile Include="Assets\scripts\items_weapons\swords\Wo Dao.cs" />
     <Compile Include="Assets\scripts\items_weapons\swords\bronze sword.cs" />
@@ -127,11 +137,24 @@
     <Compile Include="Assets\scripts\map and tiles\planes.cs" />
     <Compile Include="Assets\scripts\map and tiles\tile.cs" />
     <Compile Include="Assets\scripts\map and tiles\wall.cs" />
+    <Compile Include="Assets\scripts\numberbounce.cs" />
+    <Compile Include="Assets\scripts\persons\DawnBrigade.cs" />
+    <Compile Include="Assets\scripts\persons\Villains.cs" />
+    <Compile Include="Assets\scripts\persons\person.cs" />
     <Compile Include="Assets\scripts\players\bluePlayer.cs" />
     <Compile Include="Assets\scripts\players\greenPlayer.cs" />
     <Compile Include="Assets\scripts\players\player.cs" />
     <Compile Include="Assets\scripts\players\redPlayer.cs" />
     <Compile Include="Assets\scripts\players\yellowPlayer.cs" />
+    <Compile Include="Assets\scripts\skills\cancel.cs" />
+    <Compile Include="Assets\scripts\skills\crit.cs" />
+    <Compile Include="Assets\scripts\skills\sacrifice.cs" />
+    <Compile Include="Assets\scripts\skills\shove.cs" />
+    <Compile Include="Assets\scripts\skills\skill.cs" />
+    <Compile Include="Assets\scripts\skills\skilltypes.cs" />
+    <Compile Include="Assets\shortstats.cs" />
+    <Compile Include="Assets\unitInfo.cs" />
+    <Compile Include="Assets\unititems.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -179,6 +202,36 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>E:/Desktop/fire emblem unity/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
