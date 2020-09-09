@@ -58,7 +58,7 @@ public class combatmed : MonoBehaviour
         order.Add(combatOrder.attack);
         
 
-        int dis = distance(attackSpot, defendSpot);
+        int dis = distance(attackSpot.transform.position, defendSpot.transform.position);
         if (defender.min_range <= dis && defender.max_range >= dis)
         {
             order.Add(combatOrder.defend);
@@ -78,11 +78,10 @@ public class combatmed : MonoBehaviour
         return false;
     }
 
-    public int distance(tile att, tile def)
+    public int distance(Vector3 posAtt, Vector3 posDef)
     {
         int num = 0, num2 = 0;
-        Vector3 posAtt = att.transform.position;
-        Vector3 posDef = def.transform.position;
+      
         num = (int)posAtt[0] - (int)posDef[0];
         num2 = (int)posAtt[2] - (int)posDef[2];
         return Mathf.Abs(num) + Mathf.Abs(num2);
@@ -129,6 +128,14 @@ public class combatmed : MonoBehaviour
     public int accuracy(unit attacker, unit defender, tile spot)
     {
         int boost = evasionTriangle(attacker, defender);
+        if (supports(attacker)== true)
+        {
+            boost += attacker.suppHit;
+        }
+        if (supports(defender) == true)
+        {
+            boost -= attacker.suppAvoid;
+        }
         int num = 0;
 
 
@@ -147,7 +154,15 @@ public class combatmed : MonoBehaviour
     public int damage(unit attacker, unit defender, tile spot)
     {
         int boost = attackTriangle(attacker, defender);
-        int temp;
+        if (supports(attacker) == true)
+        {
+            boost += attacker.suppAttack;
+        }
+        if (supports(defender) == true)
+        {
+            boost -= attacker.suppDef;
+        }
+        int temp ;
         if (attacker.invintory[0].damage == damageType.physical)
         {
             temp = (attacker.attack - (defender.getDefence() + spot.def)) + boost;
@@ -309,4 +324,18 @@ public class combatmed : MonoBehaviour
         texty.text = name;
         Destroy(temp, 1f);
     }
+    public bool supports(unit guy)
+    {
+        if( guy.support != null)
+        {
+            if(distance(guy.transform.position, guy.support.transform.position) <= 3)
+            {
+                
+                return true;
+            }
+            
+        }
+        return false;
+    }
+    
 }

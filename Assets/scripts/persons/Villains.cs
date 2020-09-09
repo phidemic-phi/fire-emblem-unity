@@ -6,6 +6,7 @@ public class pugo : person
 {
     public void Init()
     {
+        skills = new List<skillsName>();
         named = "Pugo";
         hp = 0;
         str = 0;
@@ -17,7 +18,7 @@ public class pugo : person
         res = 0;
 
         tex = "pugo";
-
+        bioType = "5";
     }
 
     public static person CreateInstance()
@@ -31,6 +32,7 @@ public class bandit : person
 {
     public void Init()
     {
+        skills = new List<skillsName>();
         named = "Bandit";
         hp = 0;
         str = 0;

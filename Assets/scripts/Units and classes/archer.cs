@@ -21,7 +21,8 @@ public class archer : unit
         bow_rank = Weapon_rank.D;
         movetype = MoveType.foot;
         className = "Archer";
-
+        skill_cap = 15;
+        race = "Beorc";
         skills.Add(shove.CreateInstance());
 
     }

@@ -14,7 +14,7 @@ public class herb : consumableItems
             uses = max_uses;
         else
             uses = num;
-
+        icon = 292;
         named = "Herb";
         type = Item_type.consumable;
      
@@ -52,7 +52,7 @@ public class vulnerary : consumableItems
             uses = max_uses;
         else
             uses = num;
-
+        icon = 293;
         named = "Vulnerary";
         type = Item_type.consumable;
 
@@ -90,7 +90,7 @@ public class concoction : consumableItems
             uses = max_uses;
         else
             uses = num;
-
+        icon = 294;
         named = "Concoction";
         type = Item_type.consumable;
 
@@ -128,7 +128,7 @@ public class elixer : consumableItems
             uses = max_uses;
         else
             uses = num;
-
+        icon = 295;
         named = "Elixer";
         type = Item_type.consumable;
 
@@ -168,7 +168,7 @@ public class dracosheild : consumableItems
             uses = max_uses;
         else
             uses = num;
-
+        icon = 283;
         named = "Dracosheild";
         type = Item_type.consumable;
 

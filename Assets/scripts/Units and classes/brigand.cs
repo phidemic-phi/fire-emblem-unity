@@ -22,7 +22,8 @@ public class brigand : unit
         movetype = MoveType.foot;
 
         className = "Brigand";
-
+        skill_cap = 15;
+        race = "Beorc";
         skills.Add(shove.CreateInstance());
 
     }

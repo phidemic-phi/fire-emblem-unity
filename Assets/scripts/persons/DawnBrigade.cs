@@ -6,7 +6,8 @@ public class miccy : person
 {
     public void Init( )
     {
-      named= "Micaiah";
+        skills = new List<skillsName>();
+        named = "Micaiah";
       hp=0;
       str=0;
       mag=0;
@@ -17,7 +18,9 @@ public class miccy : person
       res=0;
 
       tex = "miccy";
-
+        bioType = "2";
+        skills.Add(skillsName.sacrifice);
+     
 }
 
     public static person CreateInstance()
@@ -31,6 +34,7 @@ public class edward : person
 {
     public void Init( )
     {
+        skills = new List<skillsName>();
         named = "Edward";
         hp = 0;
         str = 0;
@@ -42,7 +46,8 @@ public class edward : person
         res = 0;
 
         tex = "ed";
-
+        bioType = "6";
+        skills.Add(skillsName.wrath);
     }
 
     public static person CreateInstance( )
@@ -56,6 +61,7 @@ public class leonardo : person
 {
     public void Init()
     {
+        skills = new List<skillsName>();
         named = "Leonardo";
         hp = 0;
         str = 0;
@@ -67,7 +73,8 @@ public class leonardo : person
         res = 0;
 
         tex = "leo";
-
+        bioType = "3";
+        skills.Add(skillsName.cancel);
     }
 
     public static person CreateInstance()

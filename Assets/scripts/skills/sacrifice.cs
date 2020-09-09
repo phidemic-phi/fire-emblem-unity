@@ -58,7 +58,9 @@ public class sacrifice : commandSkill
     {
 
         named = "Sacrifice";
-
+        tex = 8;
+        cap = 0;
+        locked = true;
     }
 
     public static skill CreateInstance()

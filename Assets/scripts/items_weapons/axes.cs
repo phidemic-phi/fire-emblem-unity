@@ -30,7 +30,7 @@ public class bronzeaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 165;
         named = "Bronze Axe";
         type = Item_type.axe;
     }
@@ -65,7 +65,7 @@ public class ironaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 166;
         named = "Iron Axe";
         type = Item_type.axe;
     }
@@ -100,7 +100,7 @@ public class handaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 177;
         named = "Hand Axe";
         type = Item_type.axe;
     }
@@ -135,7 +135,7 @@ public class shortaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 178;
         named = "Short Axe";
         type = Item_type.axe;
     }
@@ -170,7 +170,7 @@ public class tomahawk : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 179;
         named = "Tomahawk";
         type = Item_type.axe;
     }
@@ -205,7 +205,7 @@ public class steelaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 167;
         named = "Steel Axe";
         type = Item_type.axe;
     }
@@ -240,7 +240,7 @@ public class killeraxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 174;
         named = "Killer Axe";
         type = Item_type.axe;
     }
@@ -275,7 +275,7 @@ public class silveraxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 168;
         named = "Silver Axe";
         type = Item_type.axe;
     }
@@ -310,7 +310,7 @@ public class silverpoleaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 171;
         named = "Silver Poleaxe";
         type = Item_type.axe;
     }
@@ -345,10 +345,11 @@ public class steelpoleaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 170;
         named = "Steel Poleaxe";
         type = Item_type.axe;
     }
+   
 
     public static steelpoleaxe CreateInstance(int num)
     {
@@ -380,7 +381,7 @@ public class ironpoleaxe : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 169;
         named = "Iron Poleaxe";
         type = Item_type.axe;
     }

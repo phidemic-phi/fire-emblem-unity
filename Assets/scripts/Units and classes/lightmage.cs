@@ -21,8 +21,9 @@ public class lightmage :unit
         light_rank = Weapon_rank.D;
         movetype = MoveType.mage;
         className = "Light Mage";
-
+        skill_cap = 20;
+        race = "Beorc";
         skills.Add(shove.CreateInstance());
-        skills.Add(sacrifice.CreateInstance());
+        
     }
 }

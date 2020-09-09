@@ -23,6 +23,9 @@ public class HUD : MonoBehaviour
     public unitInfo infoScript;
     public GameObject info;
     public GameObject over;
+    public Sprite[] skillIcons;
+    public Sprite[] items;
+   
     private void Start()
     {
         basic = GameObject.FindGameObjectsWithTag("basicButton");

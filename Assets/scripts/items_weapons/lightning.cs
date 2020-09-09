@@ -22,7 +22,7 @@ public class lightning : weapon
             uses = max_uses;
         else
             uses = num;
-
+        icon = 232;
         named = "Light";
         type = Item_type.light;
         damage = damageType.magical;

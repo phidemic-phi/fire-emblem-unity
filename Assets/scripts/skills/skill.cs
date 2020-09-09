@@ -8,7 +8,11 @@ public abstract class skill : ScriptableObject
    
     public string named;
 
-    public  string skillName()
+  public bool locked;
+    public int cap;
+    public int tex;
+
+    public string skillName()
     {
         return named;
     }

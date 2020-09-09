@@ -55,7 +55,9 @@ public class shove : commandSkill
     {
 
         named = "Shove";
-        
+        tex = 9;
+        cap = 5;
+        locked = true;
     }
 
     public static skill CreateInstance()

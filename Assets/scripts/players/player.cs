@@ -22,6 +22,7 @@ public abstract class player : MonoBehaviour
     public List<player> foes = new List<player>();
     public List<player> allys = new List<player>();
     public game_controller god;
+    public string teamName = "Dawn Brigade";
     public HUD hud;
 
     // Start is called before the first frame update
@@ -356,6 +357,16 @@ public abstract class player : MonoBehaviour
                 return true;
         }
         return false;
+    }
+    public string lordName()
+    {
+        for (int i = 0; i< units.Count; i++)
+        {
+            if (units[i].lord == true)
+                return units[i].name;
+
+        }
+        return "Deceased";
     }
 
     //clearing the movement colours

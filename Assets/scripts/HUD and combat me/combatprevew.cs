@@ -52,7 +52,7 @@ public class combatprevew : MonoBehaviour
 
         oHP.text = Convert.ToString(foe.hp);
         oName.text = foe.name;
-        int dis = med.distance(spot, defender);
+        int dis = med.distance(spot.transform.position, defender.transform.position);
         if (foe.has_weapon == true)
         {
             oWeapon.text = Convert.ToString(foe.invintory[0].named);

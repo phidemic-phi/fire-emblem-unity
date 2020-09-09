@@ -17,7 +17,9 @@ public class crit5 : boosterSkill
     {
 
         named = "crit + 5";
-        
+        cap = 0;
+        tex = 2;
+        locked = true;
     }
 
     public static skill CreateInstance()
@@ -46,7 +48,9 @@ public class crit10 : boosterSkill
     {
 
         named = "crit + 10";
-        
+        cap = 0;
+        tex = 3;
+        locked = true;
     }
 
     public static skill CreateInstance()
@@ -73,7 +77,9 @@ public class crit15 : boosterSkill
     {
 
         named = "crit + 15";
-        
+        cap = 0;
+        tex = 4;
+        locked = true;
     }
 
     public static skill CreateInstance()

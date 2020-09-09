@@ -20,9 +20,14 @@ public class myrmadon : unit
         move += 5;
         sword_rank = Weapon_rank.D;
         movetype = MoveType.foot;
+        skill_cap = 15;
         className = "Myrmadon";
 
+        race = "Beorc";
+
+        skills.Add(crit5.CreateInstance());
         skills.Add(shove.CreateInstance());
+        
 
     }
 }

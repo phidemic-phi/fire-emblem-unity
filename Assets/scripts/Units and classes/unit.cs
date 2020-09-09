@@ -53,6 +53,10 @@ public abstract class unit : MonoBehaviour
 
     public List<skill> skills;
     public List<item> invintory;
+    public biorythim bio;
+    public int bioSpot;
+
+
 
     //containers for every stat
   
@@ -64,6 +68,18 @@ public abstract class unit : MonoBehaviour
     public int tempLuck = 0;
     public int tempDefence = 0;
     public int tempResistance = 0;
+    public int tempMove = 0;
+
+    public string race;
+    public int constatution;
+    public int weight;
+    public unit support;
+    public int supportLevel;
+    public int suppAttack;
+    public int suppDef;
+
+    public int suppHit;
+    public int suppAvoid;
 
     // the class caps as every class has unique ones
     public int cap_max_hp;
@@ -171,6 +187,9 @@ public abstract class unit : MonoBehaviour
         {
             setPerson();
         }
+        suppSetup();
+        for (int i = 0; i < skills.Count; i++)
+            skill_use += skills[i].cap;
     }
   
     // Update is called once per frame
@@ -318,6 +337,7 @@ public abstract class unit : MonoBehaviour
             AS = 0;
         hit += Whit + (getSkill() *2);
         crit += Wcrit + (getSkill()/4);
+     
         avoid += AS * 2 + getLuck();
         dodge += getLuck();
         max_range += max;
@@ -371,6 +391,10 @@ public abstract class unit : MonoBehaviour
     {
         return resistance + tempResistance;
     }
+    public int getMove()
+    {
+        return move + tempMove;
+    }
 
 
     public bool combatSkills(combatmed med)
@@ -400,11 +424,66 @@ public abstract class unit : MonoBehaviour
         }
     }
 
+    public void suppSetup()
+    {
+        if (support != null)
+        {
+            float att = 0, def = 0, avoid = 0, hit = 0;
+            suppBoost(ref att, ref def, ref avoid, ref hit, this);
+            suppBoost(ref att, ref def, ref avoid, ref hit, support);
+            att = att * supportLevel;
+            def = def * supportLevel;
+            avoid = avoid * supportLevel;
+            hit = hit * supportLevel;
 
+
+            suppAttack += Mathf.RoundToInt(att);
+            suppDef += Mathf.RoundToInt(def);
+
+            suppHit += Mathf.RoundToInt(hit);
+            suppAvoid += Mathf.RoundToInt(avoid);
+        }
+    }
+    public void suppBoost(ref float att, ref float def, ref float avoid, ref float hit, unit guy)
+    {
+        switch (guy.affinity)
+        {
+            case Affinity.dark:
+                att += 0.5000006f;
+                avoid += 2.500006f;
+                break;
+            case Affinity.earth:
+                avoid += 7.500006f;
+                break;
+            case Affinity.fire:
+                att += 0.5000006f;
+                hit += 2.5000006f;
+                break;
+            case Affinity.heaven:
+                hit += 7.5000006f;
+                break;
+            case Affinity.light:
+                def += 0.5000006f;
+                hit += 2.5000006f;
+                break;
+            case Affinity.thunder:
+                def += 0.5000006f;
+                avoid += 2.5000006f;
+                break;
+            case Affinity.water:
+                att += 0.5000006f;
+                def += 0.5000006f;
+                break;
+            case Affinity.wind:
+                hit += 2.5000006f;
+                avoid += 2.5000006f;
+                break;
+        }
+    }
     //you clicked me, if I have yet to do anything, then go to player to see if its our turn
     //update old location so if move was canceled
-   
-     void OnMouseDown()
+
+    void OnMouseDown()
      {
          if (state == unitState.nothing)
          {
@@ -490,6 +569,7 @@ public abstract class unit : MonoBehaviour
     // player calls this on all of its units at start of turn
     public void turnStart()
     {
+        bioSpot++;
         state = unitState.nothing;
     }
 
@@ -646,7 +726,8 @@ public abstract class unit : MonoBehaviour
                 personallity = leonardo.CreateInstance();
                 break;
         }
-        name = personallity.named;
+        personallity.setup(this);
+        
     }
 
      public void skillMarkAll()

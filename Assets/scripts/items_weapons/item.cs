@@ -11,6 +11,7 @@ public abstract class item : ScriptableObject
     public int uses;
     public int max_uses;
     public string named;
+    public int icon;
     public Item_type type;
     public damageType damage = damageType.physical;
 
