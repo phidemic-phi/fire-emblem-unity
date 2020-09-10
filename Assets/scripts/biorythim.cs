@@ -8,7 +8,7 @@ public class biorythim : MonoBehaviour
 
    public bioState slot(int num)
     {
-        while (num > 25)
+        while (num > 24)
             num -= 25;
         return state[num];
     }

@@ -1148,7 +1148,7 @@ MonoBehaviour:
   constatution: 0
   weight: 0
   support: {fileID: 1082394235}
-  supportLevel: 0
+  supportLevel: 1
   suppAttack: 0
   suppDef: 0
   suppHit: 0

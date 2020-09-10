@@ -16,11 +16,11 @@ public class shortstats : MonoBehaviour
     TMPro.TextMeshProUGUI dash;
     TMPro.TextMeshProUGUI crit;
     TMPro.TextMeshProUGUI AS;
-    public combatmed med;
+
     // Start is called before the first frame update
     void Start()
     {
-        med = GameObject.FindGameObjectWithTag("CombatMed").GetComponent(typeof(combatmed)) as combatmed;
+   
         attack = transform.GetChild(0).GetComponent(typeof(TMPro.TextMeshProUGUI)) as TMPro.TextMeshProUGUI;
         hit = transform.GetChild(1).GetComponent(typeof(TMPro.TextMeshProUGUI)) as TMPro.TextMeshProUGUI;
         avoid = transform.GetChild(2).GetComponent(typeof(TMPro.TextMeshProUGUI)) as TMPro.TextMeshProUGUI;
@@ -37,24 +37,15 @@ public class shortstats : MonoBehaviour
     {
 
 
-        if (med.supports(person) == true)
-        {
-            attack.text = Convert.ToString(person.attack + person.suppAttack);
 
-            hit.text = Convert.ToString(person.hit + person.suppHit);
+        attack.text = Convert.ToString(person.attack);
 
-            avoid.text = Convert.ToString(person.avoid + person.suppAvoid);
-        }
-        else
-        {
-            attack.text = Convert.ToString(person.attack);
+        hit.text = Convert.ToString(person.hit);
 
-            hit.text = Convert.ToString(person.hit);
+        avoid.text = Convert.ToString(person.avoid);
 
-            avoid.text = Convert.ToString(person.avoid);
-        }
         dodge.text = Convert.ToString(person.dodge);
-        if(person.crit< 0)
+        if (person.crit < 0)
             crit.text = "0";
         else
             crit.text = Convert.ToString(person.crit);

@@ -22,7 +22,7 @@ public enum ID { none,miccy, edward, bandit, leo, pugo}
 public enum itemName { none,light, ironSword,steelSword,herb,bronzeAxe, ironAxe, dracosheild, vulnerary }
 public enum eventType { item, units, stats, mapChange, status, AIChange}
 public enum suppRank { C =1, B, A, S}
-public enum bioState { best, good, even, bad, worst}
+public enum bioState { Best, Good, Even, Bad, Worst}
 public enum skillsName { smite, sacrifice, wrath, cancel, nihil, guard, shade, fortune, howl, quickclaw, wildheart, shriek, adept, resolve, imbue,
 savior, celerity, discipline, pass, gamble, beastfoe, birdfoe, dragonfoe, paragon, vantage, parity, renewal, flourish, blossom, counter, disarm, corrosion, 
 provoke, miracle, mercy, nulify, dount, formshift, blessing, boon, galdrar, glare, pavise, insight, vigilance, maelstrom,  bloodtide, nighttide, stillness, 

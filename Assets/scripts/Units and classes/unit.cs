@@ -177,10 +177,7 @@ public abstract class unit : MonoBehaviour
         // gets parent, will also make the weapons from a file in the future
         // and updates the stats withen me 
         mum = GetComponentInParent(typeof(player)) as player;
-        createInvintory();
-        setValue();
-        equiping();
-        updateStats();
+      
         tempX = transform.position[0];
         tempZ = transform.position[2];
         if (me != ID.none)
@@ -190,6 +187,10 @@ public abstract class unit : MonoBehaviour
         suppSetup();
         for (int i = 0; i < skills.Count; i++)
             skill_use += skills[i].cap;
+        createInvintory();
+        setValue();
+        equiping();
+        updateStats();
     }
   
     // Update is called once per frame
@@ -320,13 +321,23 @@ public abstract class unit : MonoBehaviour
         constSkills();
         int mt =0 , Whit = 0, Wcrit = 0, weight = 0, min = 0, max = 0;
         damageType dmg = damageType.physical;
-        if (has_weapon == true)
+
+        if (support != null)
+        {
+            if (distance(transform.position, support.transform.position) <= 3)
+            {
+                attack += suppAttack;
+                avoid += suppAvoid;
+                hit += suppHit;
+            }
+        }
+                if (has_weapon == true)
         { 
             invintory[0].getStats(ref mt, ref Whit, ref Wcrit,ref weight,ref min,ref max,ref dmg);       
             if (dmg == damageType.magical)
-                attack = mt + getMagic();
+                attack += mt + getMagic();
             else if (dmg == damageType.physical)
-                attack = mt + getStrength();
+                attack += mt + getStrength();
         }
         else
             attack = 0;
@@ -335,10 +346,14 @@ public abstract class unit : MonoBehaviour
             AS = getSpeed();
         if (AS < 0)
             AS = 0;
-        hit += Whit + (getSkill() *2);
+        hit += Whit + (getSkill() *2) +bioboost();
         crit += Wcrit + (getSkill()/4);
      
-        avoid += AS * 2 + getLuck();
+        avoid += AS * 2 + getLuck() + bioboost();
+        if (avoid < 0)
+            avoid = 0;
+        if (hit < 0)
+            hit = 0;
         dodge += getLuck();
         max_range += max;
         min_range += min;
@@ -346,8 +361,49 @@ public abstract class unit : MonoBehaviour
 
         
     }
+    public bool supports()
+    {
+        if (support != null)
+        {
+            if (distance(transform.position, support.transform.position) <= 3)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public int distance(Vector3 posAtt, Vector3 posDef)
+    {
+        int num = 0, num2 = 0;
+
+        num = (int)posAtt[0] - (int)posDef[0];
+        num2 = (int)posAtt[2] - (int)posDef[2];
+        return Mathf.Abs(num) + Mathf.Abs(num2);
+    }
+    public int bioboost()
+    {
+        switch (getBio())
+        {
+            case bioState.Worst:
+                return -10;
+             
+            case bioState.Bad:
+                return -5;
+             
+            case bioState.Even:
+                return 0;
+
+            case bioState.Good:
+
+                return 5;
+            case bioState.Best:
+                return 10;
+        }
+        return 0;
+    }
     public void clearTemps()
     {
+        attack = 0;
         hit = 0;
         crit = 0;
         avoid = 0;
@@ -395,6 +451,29 @@ public abstract class unit : MonoBehaviour
     {
         return move + tempMove;
     }
+    public int getCombatDefence()
+    {
+        if (support != null)
+        {
+            if (distance(transform.position, support.transform.position) <= 3)
+            {
+                return defence + tempDefence + suppDef;
+            }
+        }
+        return defence + tempDefence;
+    }
+    public int getCombatRes()
+    {
+        if (support != null)
+        {
+            if (distance(transform.position, support.transform.position) <= 3)
+            {
+                return resistance + tempResistance + suppDef;
+            }
+        }
+        return resistance + tempResistance;
+    }
+
 
 
     public bool combatSkills(combatmed med)
@@ -571,6 +650,7 @@ public abstract class unit : MonoBehaviour
     {
         bioSpot++;
         state = unitState.nothing;
+        updateStats();
     }
 
     // how I take damage, need to update for death
@@ -763,6 +843,11 @@ public abstract class unit : MonoBehaviour
         }
 
         return temp;
+    }
+
+    public bioState getBio(int num = 0)
+    {
+        return bio.slot(bioSpot + num);
     }
     public void removeNegStatus()
     {

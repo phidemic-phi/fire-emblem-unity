@@ -128,14 +128,7 @@ public class combatmed : MonoBehaviour
     public int accuracy(unit attacker, unit defender, tile spot)
     {
         int boost = evasionTriangle(attacker, defender);
-        if (supports(attacker)== true)
-        {
-            boost += attacker.suppHit;
-        }
-        if (supports(defender) == true)
-        {
-            boost -= attacker.suppAvoid;
-        }
+        
         int num = 0;
 
 
@@ -154,18 +147,11 @@ public class combatmed : MonoBehaviour
     public int damage(unit attacker, unit defender, tile spot)
     {
         int boost = attackTriangle(attacker, defender);
-        if (supports(attacker) == true)
-        {
-            boost += attacker.suppAttack;
-        }
-        if (supports(defender) == true)
-        {
-            boost -= attacker.suppDef;
-        }
+       
         int temp ;
         if (attacker.invintory[0].damage == damageType.physical)
         {
-            temp = (attacker.attack - (defender.getDefence() + spot.def)) + boost;
+            temp = (attacker.attack - (defender.getCombatDefence() + spot.def)) + boost;
             if (temp < 0)
                 return 0;
             else
@@ -173,7 +159,7 @@ public class combatmed : MonoBehaviour
         }
         else if (attacker.invintory[0].damage == damageType.magical)
         {
-            temp = (attacker.attack - (defender.getRes() + spot.res)) + boost;
+            temp = (attacker.attack - (defender.getCombatRes() + spot.res)) + boost;
             if (temp < 0)
                 return 0;
             else
@@ -324,18 +310,6 @@ public class combatmed : MonoBehaviour
         texty.text = name;
         Destroy(temp, 1f);
     }
-    public bool supports(unit guy)
-    {
-        if( guy.support != null)
-        {
-            if(distance(guy.transform.position, guy.support.transform.position) <= 3)
-            {
-                
-                return true;
-            }
-            
-        }
-        return false;
-    }
+   
     
 }

@@ -9,7 +9,7 @@ public class supportInfo : MonoBehaviour
 
 
     public List<TMPro.TextMeshProUGUI> elements;
-    public combatmed med;
+ 
     HUD hud;
     public GameObject skillholder;
     Image circle;
@@ -19,7 +19,7 @@ public class supportInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        med = GameObject.FindGameObjectWithTag("CombatMed").GetComponent(typeof(combatmed)) as combatmed;
+   
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent(typeof(HUD)) as HUD;
         elements = new List<TMPro.TextMeshProUGUI>();
         skills = new List<GameObject>();
@@ -34,7 +34,7 @@ public class supportInfo : MonoBehaviour
     public void updating(unit person)
     {
         elements[0].text = "";
-        if (med.supports(person))
+        if (person.supports())
         {
             elements[1].text = Convert.ToString(person.suppAttack);
             elements[2].text = Convert.ToString(person.suppDef);
